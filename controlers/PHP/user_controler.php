@@ -22,18 +22,7 @@ function register()
 
     if ($result == TRUE) {
 
-      header('Location: ../views/login.php');
-
-      exit;
-
-      echo '<div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body">
-            Hello, world! This is a toast message.
-          </div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-      </div>';
+      header('Location: ../views/login.php?success=1');
     } else {
 
       echo "Error:" . $sql . "<br>" . $conn->error;
@@ -41,14 +30,3 @@ function register()
     $conn->close();
   }
 }
-
-
-function selectUsername()
-{
-  include "../sources/function/config.php";
-
-  $sql = "INSERT INTO `tbl_user`(`username`, `password`, `first_name`, `last_name`, `email`) VALUES ('$username','$password','$first_name','$last_name','$email')";
-
-  $result = $conn->query($sql);
-}
-?>

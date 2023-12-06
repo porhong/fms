@@ -19,17 +19,17 @@ register();
 
 <body class="set-bg-to-white">
     <!-- Main container -->
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container-md d-flex justify-content-center align-items-center min-vh-100">
 
 
         <!-- Login Container -->
-        <div class="row border bg-white shadow box-area disable-shadow-sm auth-card">
+        <div class="row border bg-white shadow box-area auth-card">
 
 
             <!-- Left Box -->
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
                 <div class="featured-image">
-                    <img src="../sources/img/logo.svg" class="img-fluid" style="width: 300px;">
+                    <img src="../sources/img/logo.svg" class="img-fluid" style="width: 250px;">
                 </div>
 
             </div>
@@ -40,7 +40,7 @@ register();
                     <p class="auth-title-2">Please fill the information below</p>
                 </div>
                 <div id="block_txt_username" class="input mb-3">
-                    <input oninput="verifyInput('txt_username','Username is required')" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username" name="txt_username" id="txt_username" required>
+                    <input oninput="verifyInput('txt_username','Username is required')" onblur="checkFromDB('txt_username','username')" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username" name="txt_username" id="txt_username" required>
                 </div>
                 <div id="block_txt_password" class="input mb-3">
                     <input oninput="verifyPassword()" type="password" class="form-control form-control-lg bg-light fs-6 border" placeholder="Password" name="txt_password" id="txt_password" required>
@@ -56,8 +56,8 @@ register();
                         <input oninput="verifyInput('txt_last_name','Last name is required')" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Last name" name="txt_last_name" id="txt_last_name" required>
                     </div>
                 </div>
-                <div class="input mb-3">
-                    <input oninput="verifyMail('txt_email')" type="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email" name="txt_email" id="txt_email" required>
+                <div id="block_txt_email" class="input mb-3">
+                    <input oninput="verifyMail('txt_email')" onblur="checkFromDB('txt_email','email')" type="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email" name="txt_email" id="txt_email" required>
                 </div>
                 <div class="form-check mb-4">
                     <input onclick="formVrify(true)" type="checkbox" class="form-check-input" id="formAgree">

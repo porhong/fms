@@ -39,14 +39,14 @@ function verifyPassword() {
         "help_txt_confirm_password",
         "Confirm password not match"
       );
-      formVrify(false);
+      formVrify();
     } else {
       txt_pass1.classList.remove("border-danger", "focus-ring-danger");
       txt_pass1.classList.add("border-success");
       txt_pass2.classList.remove("border-danger", "focus-ring-danger");
       txt_pass2.classList.add("border-success");
       helpTextSuccess("txt_confirm_password", "help_txt_confirm_password");
-      formVrify(true);
+      formVrify();
     }
   }
 }
@@ -58,12 +58,12 @@ function verifyInput(element, message) {
   if (ele_value == "") {
     ele.classList.add("border-danger", "focus-ring", "focus-ring-danger");
     helpTextDanger("block_" + element, element, "help_" + element, message);
-    formVrify(false);
+    formVrify();
   } else {
     ele.classList.remove("border-danger", "focus-ring", "focus-ring-danger");
     ele.classList.add("border-success");
     helpTextSuccess(element, "help_" + element);
-    formVrify(true);
+    formVrify();
   }
 }
 
@@ -77,30 +77,59 @@ function verifyMail(element) {
     ele.classList.remove("border-danger", "focus-ring", "focus-ring-danger");
     ele.classList.add("border-success");
     input_check = true;
-    formVrify(true);
+    formVrify();
   } else {
     ele.classList.add("border-danger", "focus-ring", "focus-ring-danger");
-    formVrify(false);
+    formVrify();
   }
 }
+
+//check from DB
+function checkFromDB(txt_id, column) {
+  var username = document.getElementById(txt_id).value;
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", `local_api/selectUsername.php?q=${username},${column}`);
+  xhttp.send();
+  xhttp.onload = function () {
+    checkResult = this.responseText;
+    if (username != "") {
+      if (username == checkResult) {
+        helpTextDanger(
+          `block_${txt_id}`,
+          txt_id,
+          `help_${txt_id}`,
+          `${column.toUpperCase()} : <b>${username}</b> was existed.`
+        );
+        formVrify();
+      } else {
+        if (username != "") {
+          helpTextSuccess(txt_id, `help_${txt_id}`);
+          formVrify();
+        }
+      }
+    }
+  };
+}
+
 // Validate register
-function formVrify(status) {
+function formVrify() {
+  var agree = document.getElementById("formAgree").checked;
   var username = document.getElementById("txt_username").value;
   var password1 = document.getElementById("txt_password").value;
   var password2 = document.getElementById("txt_confirm_password").value;
   var first_name = document.getElementById("txt_first_name").value;
   var last_name = document.getElementById("txt_last_name").value;
   var email = document.getElementById("txt_email").value;
-  var agree = document.getElementById("formAgree").checked;
+  var danger = document.querySelector(".input_error");
   if (
-    status == true &&
+    agree != false &&
+    danger == null &&
     username != "" &&
     password1 != "" &&
     password2 != "" &&
     first_name != "" &&
     last_name != "" &&
-    email != "" &&
-    agree == true
+    email != ""
   ) {
     btn_submit.disabled = false;
   } else {
@@ -133,14 +162,23 @@ function helpTextDanger(block_id, txt_id, help_id, text) {
   }
   const para = createHelper(text, help_id);
   document.getElementById(block_id).appendChild(para);
-  txt_elem.classList.add("border-danger", "focus-ring", "focus-ring-danger");
+  txt_elem.classList.add(
+    "border-danger",
+    "focus-ring",
+    "focus-ring-danger",
+    "input_error"
+  );
 }
 function helpTextSuccess(txt_id, help_id) {
   elem_Help = document.getElementById(help_id);
   txt_elem = document.getElementById(txt_id);
   if (elem_Help) {
     removeElement(help_id);
-    txt_elem.classList.remove("border-danger", "focus-ring-danger");
+    txt_elem.classList.remove(
+      "border-danger",
+      "focus-ring-danger",
+      "input_error"
+    );
     txt_elem.classList.add("border-success");
   }
 }

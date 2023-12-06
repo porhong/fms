@@ -1,3 +1,21 @@
+<?php
+
+if (isset($_GET['success']) && $_GET['success'] == 1) {
+    echo
+    '<div class="position-absolute top-0 end-0 toast align-items-center text-bg-success border-0 fade show mt-4 me-4" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="d-flex p-2">
+  <div class="toast-body">
+  <i class="bi bi-check-circle-fill"></i>
+    Hello, world! This is a toast message.
+  </div>
+  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+</div>';
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,21 +24,24 @@
     <link rel="stylesheet" href="../sources/style.css" />
     <!-- Link Bootstrap5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
 </head>
 
 <body class="set-bg-to-white">
     <!-- Main container -->
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container-md d-flex justify-content-center align-items-center min-vh-100">
 
 
         <!-- Login Container -->
-        <div class="row border bg-white shadow box-area disable-shadow-sm auth-card">
+        <div class="row border bg-white shadow box-area auth-card">
 
 
             <!-- Left Box -->
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
                 <div class="featured-image">
-                    <img src="../sources/img/logo.svg" class="img-fluid" style="width: 300px;">
+                    <img src="../sources/img/logo.svg" class="img-fluid" style="width: 250px;">
                 </div>
 
             </div>
@@ -55,8 +76,6 @@
         </div>
     </div>
     </div>
-    <!-- Link JS Bootstrap5 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

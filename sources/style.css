@@ -62,9 +62,9 @@ a {
 /* -------------------------------------------------- */
 /* for Small screen */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .box-area {
-    margin: 0 10px;
+    margin: 0 5px;
   }
   div.header-text .auth-title-1 {
     text-align: center;
@@ -80,8 +80,12 @@ a {
     background: var(--white);
   }
   .auth-card {
-    padding: 2rem !important;
+    padding: 0.3rem !important;
     border-radius: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-shadow: none !important;
+    display: none;
   }
 }
 /* -------------------------------------------------- */
