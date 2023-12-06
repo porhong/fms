@@ -54,10 +54,6 @@ a {
 .help-block-warn {
   color: var(--warning);
 }
-.disable-shadow-sm {
-  box-shadow: none !important;
-  border: none !important;
-}
 /* -------------------------------------------------- */
 /* Custom Bootstrap 5 */
 .btn-primary {
@@ -66,7 +62,7 @@ a {
 
 /* -------------------------------------------------- */
 /* for Small screen */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (max-width: 991.98px) {
   .box-area {
     margin: 0 5px;
   }
@@ -85,6 +81,9 @@ a {
     width: 100% !important;
     height: 100% !important;
     box-shadow: none !important;
+  }
+  .disable-shadow-sm {
+    border: none !important;
   }
 }
 /* -------------------------------------------------- */
