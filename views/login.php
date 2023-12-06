@@ -23,19 +23,19 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
     <title>Login</title>
     <link rel="stylesheet" href="../sources/style.css" />
     <!-- Link Bootstrap5 -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
 </head>
 
 <body class="set-bg-to-white">
     <!-- Main container -->
-    <div class="container-md d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
 
 
         <!-- Login Container -->
-        <div class="row border bg-white shadow box-area auth-card">
+        <div class="row border bg-white shadow disable-shadow-sm box-area auth-card">
 
 
             <!-- Left Box -->
@@ -69,7 +69,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
                 <div class="input-group mb-3">
                     <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
                 </div>
-                <div class="row">
+                <div class="row pb-3">  
                     <small>Don't have account? <a href="../views/register.php">Sign Up</a></small>
                 </div>
             </div>

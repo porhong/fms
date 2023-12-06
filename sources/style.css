@@ -54,15 +54,19 @@ a {
 .help-block-warn {
   color: var(--warning);
 }
+.disable-shadow-sm {
+  box-shadow: none !important;
+  border: none !important;
+}
 /* -------------------------------------------------- */
 /* Custom Bootstrap 5 */
 .btn-primary {
   background-color: var(--primary) !important;
 }
+
 /* -------------------------------------------------- */
 /* for Small screen */
-
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .box-area {
     margin: 0 5px;
   }
@@ -72,20 +76,15 @@ a {
   div.header-text .auth-title-2 {
     text-align: center;
   }
-  .disable-shadow-sm {
-    box-shadow: none !important;
-    border: none !important;
-  }
   .set-bg-to-white {
     background: var(--white);
   }
   .auth-card {
-    padding: 0.3rem !important;
-    border-radius: 0 !important;
+    padding: 0.5rem !important;
+    border: none !important;
     width: 100% !important;
     height: 100% !important;
     box-shadow: none !important;
-    display: none;
   }
 }
 /* -------------------------------------------------- */
