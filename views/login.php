@@ -12,7 +12,9 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 </div>
 </div>';
 }
-
+include "../controlers/PHP/user_controler.php";
+// Register function
+login();
 
 ?>
 
@@ -24,6 +26,8 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
     <link rel="stylesheet" href="../sources/style.css" />
     <!-- Link Bootstrap5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Link JS -->
+    <script type="text/javascript" src="../controlers/JS/User_JS_Controler.js"></script>
 </head>
 
 <body class="set-bg-to-white">
@@ -36,29 +40,29 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 
 
             <!-- Left Box -->
-            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
-                <div class="featured-image">
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box position-relative">
+                <div class="position-absolute">
                     <img src="../sources/img/logo.svg" class="img-fluid" style="width: 250px;">
                 </div>
 
             </div>
             <!-- Right Box -->
-            <div class="col-md-6 right-box">
+            <form class="col-md-6 right-box" method="POST" action="">
                 <div class="header-text">
                     <p class="auth-title-1">Hello, Welcome</p>
                     <p class="auth-title-2">Please login to continue</p>
                 </div>
-                <div class="form-floating input mb-3">
-                    <input id="txt_username_email" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username or Email">
+                <div id="block_txt_username_email" class="form-floating input mb-3">
+                    <input oninput="loginVerify('txt_username_email','Username is required')" name="txt_username_email" id="txt_username_email" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username or Email">
                     <label for="txt_username_email">Username or Email</label>
                 </div>
-                <div class="form-floating input mb-1">
-                    <input id="txt_password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                <div id="block_txt_password" class="form-floating input mb-1">
+                    <input oninput="loginVerify('txt_password','Password is required')" name="txt_password" id="txt_password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
                     <label for="txt_password">Password</label>
                 </div>
                 <div class="input-group mb-3 d-flex justify-content-between">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="formCheck" placeholder="Password">
+                        <input type="checkbox" class="form-check-input" id="cb_remember_me" name="cb_remember_me" placeholder="Password">
                         <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
                     </div>
                     <div class="forget">
@@ -66,12 +70,12 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
+                    <button id="btn_submit" class="btn btn-lg btn-primary w-100 fs-6" name="submit" disabled>Login</button>
                 </div>
                 <div class="row pb-3">
                     <small>Don't have account? <a href="../views/register.php">Sign Up</a></small>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     </div>

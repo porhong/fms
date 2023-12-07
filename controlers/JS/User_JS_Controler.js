@@ -51,8 +51,34 @@ function verifyPassword() {
   }
 }
 
-// input Check
-function verifyInput(element, message) {
+// Validate login
+function loginInputVrify() {
+  var danger = document.querySelector(".input_error");
+  var username = document.getElementById("txt_username_email").value;
+  var password = document.getElementById("txt_password").value;
+  if (danger == null && username != "" && password != "") {
+    btn_submit.disabled = false;
+  } else {
+    btn_submit.disabled = true;
+  }
+}
+function loginVerify(txt_id, message) {
+  var data = document.getElementById(txt_id).value;
+  var ele = document.getElementById(txt_id);
+  if (data == "") {
+    ele.classList.add("border-danger", "focus-ring", "focus-ring-danger");
+    helpTextDanger("block_" + txt_id, txt_id, "help_" + txt_id, message);
+    loginInputVrify();
+  } else {
+    ele.classList.remove("border-danger", "focus-ring", "focus-ring-danger");
+    ele.classList.add("border-success");
+    helpTextSuccess(txt_id, "help_" + txt_id);
+    loginInputVrify();
+  }
+}
+
+// Validate register
+function verifyRegisterInput(element, message) {
   var ele = document.getElementById(element);
   var ele_value = document.getElementById(element).value;
   if (ele_value == "") {
@@ -66,20 +92,44 @@ function verifyInput(element, message) {
     formVrify();
   }
 }
+function formVrify() {
+  var agree = document.getElementById("formAgree").checked;
+  var username = document.getElementById("txt_username").value;
+  var password1 = document.getElementById("txt_password").value;
+  var password2 = document.getElementById("txt_confirm_password").value;
+  var first_name = document.getElementById("txt_first_name").value;
+  var last_name = document.getElementById("txt_last_name").value;
+  var email = document.getElementById("txt_email").value;
+  var danger = document.querySelector(".input_error");
+  if (
+    agree != false &&
+    danger == null &&
+    username != "" &&
+    password1 != "" &&
+    password2 != "" &&
+    first_name != "" &&
+    last_name != "" &&
+    email != ""
+  ) {
+    btn_submit.disabled = false;
+  } else {
+    btn_submit.disabled = true;
+  }
+}
 
 // mail Check
 function verifyMail(element) {
   var ele = document.getElementById(element);
   var ele_value = document.getElementById(element).value;
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
   if (ele_value.match(mailformat)) {
     ele.classList.remove("border-danger", "focus-ring", "focus-ring-danger");
     ele.classList.add("border-success");
     input_check = true;
     formVrify();
   } else {
-    ele.classList.add("border-danger", "focus-ring", "focus-ring-danger");
+    ele.classList.remove("border-success", "focus-ring", "focus-ring-success");
+    ele.classList.add("border-danger");
     formVrify();
   }
 }
@@ -109,32 +159,6 @@ function checkFromDB(txt_id, column) {
       }
     }
   };
-}
-
-// Validate register
-function formVrify() {
-  var agree = document.getElementById("formAgree").checked;
-  var username = document.getElementById("txt_username").value;
-  var password1 = document.getElementById("txt_password").value;
-  var password2 = document.getElementById("txt_confirm_password").value;
-  var first_name = document.getElementById("txt_first_name").value;
-  var last_name = document.getElementById("txt_last_name").value;
-  var email = document.getElementById("txt_email").value;
-  var danger = document.querySelector(".input_error");
-  if (
-    agree != false &&
-    danger == null &&
-    username != "" &&
-    password1 != "" &&
-    password2 != "" &&
-    first_name != "" &&
-    last_name != "" &&
-    email != ""
-  ) {
-    btn_submit.disabled = false;
-  } else {
-    btn_submit.disabled = true;
-  }
 }
 
 // ------------------------------------------FUNCTION---------------------------------------------------------------
