@@ -7,6 +7,7 @@
   --danger: #ea868f;
   --warning: #ffda6a;
   --bg: #ecececec;
+  --boarder: rgba(128, 128, 128, 0.3);
 }
 /* Global */
 body {
@@ -34,12 +35,14 @@ a {
 }
 
 .right-box {
-  padding: 60px 30px 60px 60px !important;
+  padding: 30px 30px !important;
 }
 
 .auth-card {
   padding: 2rem !important;
+  border: 1px solid var(--boarder);
   border-radius: 1rem !important;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .help-block {
@@ -54,18 +57,23 @@ a {
 .help-block-warn {
   color: var(--warning);
 }
+.icon_size {
+  font-size: large !important;
+  width: 16 !important;
+  height: 16 !important;
+}
+
 /* -------------------------------------------------- */
 /* Custom Bootstrap 5 */
 .btn-primary {
   background-color: var(--primary) !important;
 }
-
+.form-label {
+  background-color: var(--danger) !important;
+}
 /* -------------------------------------------------- */
 /* for Small screen */
-@media only screen and (max-width: 768px) and (max-width: 991.98px) {
-  .box-area {
-    margin: 0 5px;
-  }
+@media only screen and (max-width: 768px) {
   div.header-text .auth-title-1 {
     text-align: center;
   }
@@ -76,14 +84,18 @@ a {
     background: var(--white);
   }
   .auth-card {
-    padding: 0.5rem !important;
+    padding: 0.1rem !important;
     border: none !important;
-    width: 100% !important;
-    height: 100% !important;
     box-shadow: none !important;
   }
   .disable-shadow-sm {
-    border: none !important;
+    border: none solid !important;
+  }
+  .right-box {
+    padding: 10px 10px !important;
+  }
+  .icon_back {
+    visibility: hidden !important;
   }
 }
 /* -------------------------------------------------- */

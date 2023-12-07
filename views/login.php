@@ -23,7 +23,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
     <title>Login</title>
     <link rel="stylesheet" href="../sources/style.css" />
     <!-- Link Bootstrap5 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body class="set-bg-to-white">
@@ -32,7 +32,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 
 
         <!-- Login Container -->
-        <div class="row border disable-shadow-sm bg-white box-area auth-card">
+        <div class="row bg-white box-area auth-card">
 
 
             <!-- Left Box -->
@@ -43,16 +43,18 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 
             </div>
             <!-- Right Box -->
-            <div class="col-md-6 rigtt-box">
+            <div class="col-md-6 right-box">
                 <div class="header-text">
                     <p class="auth-title-1">Hello, Welcome</p>
                     <p class="auth-title-2">Please login to continue</p>
                 </div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username or Email">
+                <div class="form-floating input mb-3">
+                    <input id="txt_username_email" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username or Email">
+                    <label for="txt_username_email">Username or Email</label>
                 </div>
-                <div class="input-group mb-1">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                <div class="form-floating input mb-1">
+                    <input id="txt_password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                    <label for="txt_password">Password</label>
                 </div>
                 <div class="input-group mb-3 d-flex justify-content-between">
                     <div class="form-check">
@@ -66,16 +68,15 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
                 <div class="input-group mb-3">
                     <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
                 </div>
-                <div class="row pb-3">  
+                <div class="row pb-3">
                     <small>Don't have account? <a href="../views/register.php">Sign Up</a></small>
                 </div>
             </div>
         </div>
     </div>
     </div>
-<!-- Bootstrap JS and dependencies (optional) -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
