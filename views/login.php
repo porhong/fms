@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_GET['success']) && $_GET['success'] == 1) {
     echo
     '<div class="position-absolute top-0 end-0 toast align-items-center text-bg-success border-0 fade show mt-4 me-4" role="alert" aria-live="assertive" aria-atomic="true">
@@ -15,6 +15,15 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 include "../controlers/PHP/user_controler.php";
 // Register function
 login();
+echo isset($_COOKIE["USER_NAME"]);
+if (isset($_COOKIE["USER_NAME"]) != "") {
+    header('Location: ../views/index.php');
+    exit();
+}
+if (isset($_SESSION['Auth'])) {
+    header('Location: ../views/index.php');
+    exit();
+}
 
 ?>
 
@@ -31,7 +40,7 @@ login();
     <script type="text/javascript" src="../controlers/JS/User_JS_Controler.js"></script>
 </head>
 
-<body class="set-bg-to-white">
+<body>
     <!-- Main container -->
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
 
@@ -41,8 +50,8 @@ login();
 
 
             <!-- Left Box -->
-            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box position-relative">
-                <div class="position-absolute">
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
+                <div>
                     <img src="../sources/img/logo.svg" class="img-fluid" style="width: 250px;">
                 </div>
 

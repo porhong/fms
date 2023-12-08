@@ -127,13 +127,28 @@ function verifyMail(element) {
     ele.classList.add("border-success");
     input_check = true;
     formVrify();
+    checkEmptymail(element);
   } else {
     ele.classList.remove("border-success", "focus-ring", "focus-ring-success");
     ele.classList.add("border-danger");
     formVrify();
+    checkEmptymail(element);
   }
 }
-
+// Mail empty Check
+function checkEmptymail(element) {
+  var ele = document.getElementById(element).value;
+  if (ele == "") {
+    helpTextDanger(
+      "block_" + element,
+      element,
+      "help_" + element,
+      "Email is required."
+    );
+  } else {
+    helpTextSuccess(element, "help_" + element);
+  }
+}
 //check from DB
 function checkFromDB(txt_id, column) {
   var username = document.getElementById(txt_id).value;

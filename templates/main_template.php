@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!$_SESSION['Auth']) {
+    header('Location: ../views/login.php');
+    exit();
+}
+?>
+
 <html lang="en">
 
 <head>

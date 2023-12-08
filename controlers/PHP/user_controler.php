@@ -37,11 +37,11 @@ function login()
   if (isset($_POST['submit'])) {
     $username = $_POST['txt_username_email'];
     $password = $_POST['txt_password'];
+    $remember_me = isset($_POST['cb_remember_me']);
     //to prevent from mysqli injection  
     $username = stripcslashes($username);
     $password = stripcslashes($password);
 
-    //$remember_me = $_POST['cb_remember_me'];
 
     $sql = "SELECT `id`,`username`, `password`,`email`,`first_name`,`last_name` FROM `tbl_user` WHERE `email`= '$username' OR `username` = '$username' AND `password` = '$password';";
 
@@ -51,12 +51,18 @@ function login()
     if ($result == TRUE) {
       if ($count == 1) {
         session_start();
+        ini_set("session.gc_maxlifetime", 86400);
         $_SESSION['userID'] = $userdata['id'];
         $_SESSION['userName'] = $userdata['username'];
         $_SESSION['userEmail'] = $userdata['email'];
         $_SESSION['firstName'] = $userdata['first_name'];
         $_SESSION['lastName'] = $userdata['last_name'];
+        $_SESSION['Auth'] = true;
+        if ($remember_me) {
+          setcookie('USER_NAME', $username, time() + 86400);
+        }
         header('Location: ../views/index.php');
+        exit();
       } else {
         echo
         '<div class="position-absolute top-0 end-0 toast align-items-center text-bg-danger border-0 fade show mt-4 me-4" role="alert" aria-live="assertive" aria-atomic="true">
@@ -75,6 +81,19 @@ function login()
     }
 
 
+
     $conn->close();
+  }
+}
+
+
+function logout()
+{
+  if (isset($_POST['logout'])) {
+    session_destroy();
+    unset($_COOKIE['USER_NAME']);
+    setcookie('USER_NAME', '', time() - 86400);
+    header('Location: ../views/login.php');
+    exit();
   }
 }
