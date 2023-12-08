@@ -1,0 +1,16 @@
+/* Variable */
+:root {
+  --primary: #3e58a7;
+  --secondary: #467cbf;
+  --white: #fff;
+  --success: #6eac90;
+  --danger: #ea868f;
+  --warning: #ffda6a;
+  --bg: #ecececec;
+  --boarder: rgba(128, 128, 128, 0.3);
+}
+/* Global */
+body {
+  font-family: poppins;
+  background: var(--bg) !important;
+}

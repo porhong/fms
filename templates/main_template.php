@@ -19,3 +19,4 @@ if (!$_SESSION['Auth']) {
 </head>
 
 <body>
+    <?php require("../templates/components/sidebar.php"); ?>

@@ -14,7 +14,7 @@ body {
   font-family: poppins;
   background: var(--bg);
 }
-a {
+.link_color a {
   color: var(--primary) !important;
   text-decoration: none !important;
 }

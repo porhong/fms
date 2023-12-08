@@ -66,14 +66,14 @@ if (isset($_SESSION['Auth'])) {
                     <input oninput="loginVerify('txt_username_email','Username is required')" name="txt_username_email" id="txt_username_email" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username or Email">
                     <label for="txt_username_email">Username or Email</label>
                 </div>
-                <div id="block_txt_password" class="form-floating input mb-1">
+                <div id="block_txt_password" class="form-floating input mb-2">
                     <input oninput="loginVerify('txt_password','Password is required')" name="txt_password" id="txt_password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
                     <label for="txt_password">Password</label>
                 </div>
                 <div class="input-group mb-3 d-flex justify-content-between">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="cb_remember_me" name="cb_remember_me" placeholder="Password">
-                        <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
+                        <label for="cb_remember_me" class="form-check-label text-secondary"><small>Remember Me</small></label>
                     </div>
                     <div class="forget">
                         <small><a href="#">Forget Password?</a></small>

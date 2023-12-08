@@ -89,11 +89,9 @@ function login()
 
 function logout()
 {
-  if (isset($_POST['logout'])) {
-    session_destroy();
-    unset($_COOKIE['USER_NAME']);
-    setcookie('USER_NAME', '', time() - 86400);
-    header('Location: ../views/login.php');
-    exit();
-  }
+  session_destroy();
+  unset($_COOKIE['USER_NAME']);
+  setcookie('USER_NAME', '', time() - 86400);
+  header('Location: ../views/login.php');
+  exit();
 }
