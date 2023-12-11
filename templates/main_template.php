@@ -1,9 +1,18 @@
 <?php
 session_start();
-if (!$_SESSION['Auth']) {
+if (isset($_COOKIE['REMEMBERED'])) {
+    $_SESSION['Auth'] = $_COOKIE["REMEMBERED"];
+    $_SESSION['userID'] = $_COOKIE["USER_ID"];
+    $_SESSION['userName'] = $_COOKIE["USER_NAME"];
+    $_SESSION['userEmail'] = $_COOKIE["EMAIL"];
+    $_SESSION['firstName'] = $_COOKIE["FIRST_NAME"];
+    $_SESSION['lastName'] = $_COOKIE["LAST_NAME"];
+}
+if (!isset($_SESSION['Auth'])) {
     header('Location: ../views/login.php');
     exit();
 }
+
 ?>
 
 <html lang="en">

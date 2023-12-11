@@ -59,7 +59,12 @@ function login()
         $_SESSION['lastName'] = $userdata['last_name'];
         $_SESSION['Auth'] = true;
         if ($remember_me) {
-          setcookie('USER_NAME', $username, time() + 86400);
+          setcookie('USER_ID', $userdata['id'], time() + (86400 * 30), "/");
+          setcookie('USER_NAME', $userdata['username'], time() + (86400 * 30), "/");
+          setcookie('EMAIL', $userdata['email'], time() + (86400 * 30), "/");
+          setcookie('FIRST_NAME', $userdata['first_name'], time() + (86400 * 30), "/");
+          setcookie('LAST_NAME', $userdata['last_name'], time() + (86400 * 30), "/");
+          setcookie('REMEMBERED', true, time() + (86400 * 30), "/");
         }
         header('Location: ../views/index.php');
         exit();
@@ -89,9 +94,23 @@ function login()
 
 function logout()
 {
+  setcookie('USER_ID', '', time() - (86400 * 30), "/");
+  setcookie('USER_NAME', '', time() - (86400 * 30), "/");
+  setcookie('EMAIL', '',  time() - (86400 * 30), "/");
+  setcookie('FIRST_NAME', '',  time() - (86400 * 30), "/");
+  setcookie('LAST_NAME', '',  time() - (86400 * 30), "/");
+  setcookie('REMEMBERED', '',  time() - (86400 * 30), "/");
+  // unset($_COOKIE['USER_ID']);
+  // unset($_COOKIE['USER_NAME']);
+  // unset($_COOKIE['EMAIL']);
+  // unset($_COOKIE['FIRST_NAME']);
+  // unset($_COOKIE['LAST_NAME']);
+  // unset($_COOKIE['REMEMBERED']);
+  session_start();
+  session_unset();
   session_destroy();
-  unset($_COOKIE['USER_NAME']);
-  setcookie('USER_NAME', '', time() - 86400);
-  header('Location: ../views/login.php');
+  session_write_close();
+  session_regenerate_id(true);
+  header('Location: ../../views/login.php');
   exit();
 }

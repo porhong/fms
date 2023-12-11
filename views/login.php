@@ -13,18 +13,11 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 </div>';
 }
 include "../controlers/PHP/user_controler.php";
-// Register function
 login();
-echo isset($_COOKIE["USER_NAME"]);
-if (isset($_COOKIE["USER_NAME"]) != "") {
-    header('Location: ../views/index.php');
-    exit();
-}
 if (isset($_SESSION['Auth'])) {
     header('Location: ../views/index.php');
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
