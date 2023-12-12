@@ -8,7 +8,7 @@ function register()
   if (isset($_POST['submit'])) {
     $username = $_POST['txt_username'];
 
-    $password = $_POST['txt_password'];
+    $password = md5($_POST['txt_password']);
 
     $first_name = $_POST['txt_first_name'];
 
@@ -36,7 +36,7 @@ function login()
   include "../sources/function/config.php";
   if (isset($_POST['submit'])) {
     $username = $_POST['txt_username_email'];
-    $password = $_POST['txt_password'];
+    $password = md5($_POST['txt_password']);
     $remember_me = isset($_POST['cb_remember_me']);
     //to prevent from mysqli injection  
     $username = stripcslashes($username);
