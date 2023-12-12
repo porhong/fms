@@ -45,6 +45,7 @@ function login()
 
     $sql = "SELECT `id`,`username`, `password`,`email`,`first_name`,`last_name` FROM `tbl_user` WHERE `email`= '$username' OR `username` = '$username' AND `password` = '$password';";
 
+
     $result = $conn->query($sql);
     $count = mysqli_num_rows($result);
     $userdata = $result->fetch_assoc();
@@ -66,6 +67,12 @@ function login()
           setcookie('LAST_NAME', $userdata['last_name'], time() + (86400 * 30), "/");
           setcookie('REMEMBERED', true, time() + (86400 * 30), "/");
         }
+        //log logging to database
+        $UserID = $userdata['id'];
+        date_default_timezone_set("Asia/Phnom_Penh");
+        $log_timestamp = date("Y-m-d H:i:s");
+        $sql_log_login = "UPDATE `tbl_user` SET `last_login`='$log_timestamp' WHERE `id`= '$UserID'";
+        $conn->query($sql_log_login);
         header('Location: ../views/index.php');
         exit();
       } else {
