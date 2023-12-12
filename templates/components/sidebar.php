@@ -1,33 +1,42 @@
 <!-- Top Navbar -->
-<div class="position-relative">
-    <nav id="top_nav" style="height: 3.5rem;" class="navbar bg-body-tertiary position-absolute w-100 shadow position-relative fixed-top">
-        <div>
-            <a id="nav_title" class="navbar-brand ps-4 position-absolute top-50 start-0 translate-middle-y" href="#">
-                <img src="../sources/img/logo.svg" width="50" height="50" class="img-fluid">
-                <b class="d-inline-block align-text-top">Badbot Solution</b>
-            </a>
-            <a id="nav_title_mobile" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y" href="#">
-                <img src="../sources/img/logo.svg" width="70" height="70" class="img-fluid">
-            </a>
 
-
-            <div id="nav_profile" style="padding-right: 10.8rem;" class="dropdown position-absolute top-50 start-100 translate-middle">
-                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong><?php echo $_SESSION["lastName"]  ?></strong>
+<!-- Mobile Tabbar -->
+<div>
+    <nav id="top_bar" class="navbar border-top fixed-top pt-5">
+        <ul class="navbar-nav nav-justified w-100 list-group list-group-horizontal">
+            <li class="nav-item">
+                <a id="nav_title" class="navbar-brand ps-4 position-absolute top-50 start-0 translate-middle-y" href="#">
+                    <img src="../sources/img/logo.svg" width="50" height="50" class="img-fluid">
+                    <b class="d-inline-block align-text-top">Badbot Solution</b>
                 </a>
-                <ul class="dropdown-menu text-small shadow">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a href="../controlers/PHP/logout_controler.php" class="dropdown-item">Sign out</a></li>
-                </ul>
-            </div>
-        </div>
+                <a id="nav_title_mobile" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y" href="#">
+                    <img src="../sources/img/logo.svg" width="70" height="70" class="img-fluid">
+                </a>
+            </li>
+            <li class="nav-item">
+                <div id="nav_profile" style="padding-right: 10.8rem;" class="dropdown position-absolute top-50 start-100 translate-middle">
+                    <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <strong><?php echo $_SESSION["lastName"]  ?></strong>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a href="../controlers/PHP/logout_controler.php" class="dropdown-item">Sign out</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
     </nav>
-
 </div>
+
+
+
+
+
+
 
 <!-- SideBar -->
 <div id="side_bar" class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100 shadow" style="width: 280px">
