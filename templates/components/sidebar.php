@@ -115,10 +115,9 @@
         </div>
         <!-- content Bolock -->
         <div id="content" class="left_margin_content top_margin_content col">
-            <div>
-                <?php echo $content ?>
-            </div>
+            <?php echo $content ?>
         </div>
+
 
     </div>
 
