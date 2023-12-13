@@ -31,15 +31,17 @@ if (isset($_SESSION['Auth'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Link JS -->
     <script type="text/javascript" src="../controlers/JS/User_JS_Controler.js"></script>
+    <!-- Link JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
     <!-- Main container -->
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div id="main_container" class="container d-flex justify-content-center align-items-center min-vh-100">
 
 
         <!-- Login Container -->
-        <div class="row bg-white box-area auth-card">
+        <div id="login_container" class="row bg-white box-area auth-card">
 
 
             <!-- Left Box -->
@@ -84,6 +86,34 @@ if (isset($_SESSION['Auth'])) {
     </div>
     <!-- Bootstrap JS and dependencies (optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        var wd = $(window).width();
+        console.log(wd);
+        if (wd < 768) {
+            $("#main_container").removeClass("min-vh-100");
+            $("#main_container").addClass("mt-5");
+
+
+        } else {
+            $("#main_container").addClass("min-vh-100");
+            $("#main_container").removeClass("mt-5");
+
+        }
+        $(window).resize(function() {
+            var wd = $(window).width();
+            console.log(wd);
+            if (wd < 768) {
+                $("#main_container").removeClass("min-vh-100");
+                $("#main_container").addClass("mt-5");
+
+
+            } else {
+                $("#main_container").addClass("min-vh-100");
+                $("#main_container").removeClass("mt-5");
+
+            }
+        });
+    </script>
 </body>
 
 </html>

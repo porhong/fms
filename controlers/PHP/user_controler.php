@@ -107,12 +107,12 @@ function logout()
   setcookie('FIRST_NAME', '',  time() - (86400 * 30), "/");
   setcookie('LAST_NAME', '',  time() - (86400 * 30), "/");
   setcookie('REMEMBERED', '',  time() - (86400 * 30), "/");
-  // unset($_COOKIE['USER_ID']);
-  // unset($_COOKIE['USER_NAME']);
-  // unset($_COOKIE['EMAIL']);
-  // unset($_COOKIE['FIRST_NAME']);
-  // unset($_COOKIE['LAST_NAME']);
-  // unset($_COOKIE['REMEMBERED']);
+  unset($_COOKIE['USER_ID']);
+  unset($_COOKIE['USER_NAME']);
+  unset($_COOKIE['EMAIL']);
+  unset($_COOKIE['FIRST_NAME']);
+  unset($_COOKIE['LAST_NAME']);
+  unset($_COOKIE['REMEMBERED']);
   session_start();
   session_unset();
   session_destroy();
@@ -120,4 +120,14 @@ function logout()
   session_regenerate_id(true);
   header('Location: ../../views/login.php');
   exit();
+}
+
+
+function getUser()
+{
+  include "../sources/function/config.php";
+  $sql = "SELECT tbl_user.id, `username`, `password`, `first_name`, `last_name`, `email`, `created_at`, `status`, `last_login`, tbl_roles.name AS 'role' FROM `tbl_user` INNER JOIN tbl_roles ON tbl_roles.id=tbl_user.role;";
+  $result = $conn->query($sql);
+  return $result;
+  $conn->close();
 }

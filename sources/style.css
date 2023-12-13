@@ -63,6 +63,13 @@ body {
   height: 16 !important;
 }
 
+.left_margin_content {
+  margin-left: 18rem !important;
+}
+.top_margin_content {
+  margin-top: 5rem !important;
+}
+
 /* -------------------------------------------------- */
 /* Custom Bootstrap 5 */
 .btn-primary {
