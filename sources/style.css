@@ -64,10 +64,10 @@ body {
 }
 
 .left_margin_content {
-  margin-left: 18rem !important;
+  padding-left: 15vw !important;
 }
 .top_margin_content {
-  margin-top: 5rem !important;
+  padding-top: 5rem !important;
 }
 
 /* -------------------------------------------------- */
