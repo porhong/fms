@@ -9,14 +9,38 @@
   --bg: #ecececec;
   --boarder: rgba(128, 128, 128, 0.3);
 }
+
+/* Properties */
+.text-color-primary {
+  color: var(--primary) !important;
+}
+
 /* Global */
 body {
   font-family: poppins;
   background: var(--bg);
 }
-.link_color a {
+.link_color {
   color: var(--primary) !important;
   text-decoration: none !important;
+}
+
+/* Scroll bar stylings */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--boarder);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
 }
 /* -------------------------------------------------- */
 /* Apply Style */
@@ -57,19 +81,73 @@ body {
 .help-block-warn {
   color: var(--warning);
 }
-.icon_size {
-  font-size: large !important;
-  width: 16 !important;
-  height: 16 !important;
+.icon_none_active {
+  color: var(--primary) !important;
 }
 
 .left_margin_content {
-  padding-left: 15vw !important;
+  padding-left: 13vw !important;
+}
+.left_margin_content_small {
+  padding-left: 9vw !important;
 }
 .top_margin_content {
-  padding-top: 5rem !important;
+  padding-top: 6rem !important;
+}
+.top_bar {
+  padding-top: 3.5rem !important;
+  background-color: var(--white) !important;
 }
 
+.tab_bar {
+  background-color: var(--white) !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  box-shadow: 3px -4px 30px -11px rgba(0, 0, 0, 0.2);
+}
+.tab_bar ul li a svg {
+  color: var(--primary);
+}
+.active_bg_sidebar {
+  background-color: var(--primary) !important;
+  border-radius: 0.5rem !important;
+}
+.active_text_sidebar {
+  color: var(--white) !important;
+  font-weight: 600;
+}
+.active_bg_sm_sidebar {
+  background-color: var(--primary) !important;
+}
+.active_text_sm_sidebar {
+  color: var(--white) !important;
+}
+.tabbar_mobile {
+  border-radius: 2rem;
+  background-color: var(--primary);
+  color: var(--white);
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.tabbar_mobile b {
+  margin-left: -0.5rem;
+}
+.tabbar_mobile svg {
+  color: var(--white) !important;
+}
+/*loading screen*/
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../img/45.gif") 50% 50% no-repeat rgb(249, 249, 249);
+  opacity: 0.8;
+}
+.loader l-hourglass {
+  margin-left: auto;
+  margin-right: auto;
+}
 /* -------------------------------------------------- */
 /* Custom Bootstrap 5 */
 .btn-primary {
@@ -77,6 +155,9 @@ body {
 }
 .form-label {
   background-color: var(--danger) !important;
+}
+.text-primary {
+  color: var(--primary) !important;
 }
 /* -------------------------------------------------- */
 /* for Small screen */

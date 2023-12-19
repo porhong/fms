@@ -31,7 +31,12 @@ if (!isset($_SESSION['Auth'])) {
     <title><?php echo $page_title; ?></title>
     <!-- Link CSS Animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Loading animation -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
 </head>
 
 <body>
+    <div class="loader">
+
+    </div>
     <?php require("../templates/components/sidebar.php"); ?>
