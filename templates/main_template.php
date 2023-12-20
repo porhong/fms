@@ -33,6 +33,8 @@ if (!isset($_SESSION['Auth'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Loading animation -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
+    <!-- Link JS each page -->
+    <?php echo $link_js ?>
 </head>
 
 <body>

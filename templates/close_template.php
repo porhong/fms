@@ -1,6 +1,5 @@
 <script>
     var wd = $(window).width();
-    console.log(wd);
     if (wd < 1450 && wd > 900) {
         $("#profile_use_name").addClass("d-none");
         $("#tab_bar").addClass("d-none");
@@ -40,7 +39,6 @@
     }
     $(window).resize(function() {
         var wd = $(window).width();
-        console.log(wd);
         if (wd < 1450 && wd > 900) {
             $("#profile_use_name").addClass("d-none");
             $("#tab_bar").addClass("d-none");
@@ -82,7 +80,6 @@
 
     // side bar menu active
     var current_title = $(document).attr('title').toLowerCase();
-    console.log(`#tab_${current_title}`);
     $(`#sidebar_${current_title}`).addClass("active_bg_sidebar");
     $(`#sidebar_${current_title} svg`).removeClass("icon_none_active");
     $(`#sidebar_${current_title} svg`).addClass("active_text_sidebar");
