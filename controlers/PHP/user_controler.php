@@ -23,6 +23,7 @@ function register()
     if ($result == TRUE) {
 
       header('Location: ../views/login.php?success=1');
+      exit;
     } else {
 
       echo "Error:" . $sql . "<br>" . $conn->error;

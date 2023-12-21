@@ -127,12 +127,17 @@ function verifyMail(element) {
     ele.classList.add("border-success");
     input_check = true;
     formVrify();
-    checkEmptymail(element);
   } else {
     ele.classList.remove("border-success", "focus-ring", "focus-ring-success");
     ele.classList.add("border-danger");
+    helpTextDanger(
+      "block_" + element,
+      element,
+      "help_" + element,
+      "Email is not correct."
+    );
+    input_check = false;
     formVrify();
-    checkEmptymail(element);
   }
 }
 // Mail empty Check
@@ -145,6 +150,7 @@ function checkEmptymail(element) {
       "help_" + element,
       "Email is required."
     );
+    return;
   } else {
     helpTextSuccess(element, "help_" + element);
   }

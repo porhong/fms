@@ -35,6 +35,9 @@ if (!isset($_SESSION['Auth'])) {
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
     <!-- Link JS each page -->
     <?php echo $link_js ?>
+    <!-- Link SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../controlers/JS/alert.js"></script>
 </head>
 
 <body>

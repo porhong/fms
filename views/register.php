@@ -33,7 +33,7 @@ register();
             <!-- Left Box -->
             <div class=" position-relative col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
                 <div class=" icon_back position-absolute top-0 start-0">
-                    <a href="../views/login.php"><i style="font-size: 2.2rem;" class=" bi bi-arrow-left-circle"></i></a>
+                    <a class="text-color-primary" href="../views/login.php"><i style="font-size: 2.2rem;" class=" bi bi-arrow-left-circle"></i></a>
                 </div>
                 <div class="featured-image">
                     <img src="../sources/img/logo.svg" class="img-fluid" style="width: 250px;">

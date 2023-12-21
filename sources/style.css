@@ -13,12 +13,23 @@
 /* Properties */
 .text-color-danger {
   color: var(--danger) !important;
+  text-decoration: none !important;
 }
 .text-color-primary {
   color: var(--primary) !important;
+  text-decoration: none !important;
 }
 .text-color-warning {
   color: var(--warning) !important;
+  text-decoration: none !important;
+}
+.text-color-success {
+  color: var(--success) !important;
+  text-decoration: none !important;
+}
+.text-color-error {
+  color: var(--danger) !important;
+  text-decoration: none !important;
 }
 
 /* Global */
@@ -164,6 +175,28 @@ body {
 }
 .text-primary {
   color: var(--primary) !important;
+}
+.btn-secondary {
+  background-color: var(--danger) !important;
+  border: none !important;
+}
+/* custom toggle switch */
+
+.form-switch.form-switch-lg {
+  height: 1.3rem;
+}
+
+.form-switch.form-switch-lg .form-check-input {
+  height: 1.4rem;
+  width: 2.8rem;
+  margin-right: 1rem;
+}
+.form-floating .form-control {
+  background-color: var(--white) !important;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
+}
+.form-floating .form-lable::after {
+  background-color: transparent !important;
 }
 /* -------------------------------------------------- */
 /* for Small screen */
