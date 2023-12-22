@@ -1,12 +1,7 @@
 <?php
 include '../controlers/PHP/user_controler.php';
 include '../templates/components/modal.php';
-include '../controlers/PHP/alert.php';
 
-
-if (isset($_GET['user_deleted']) && $_GET['user_deleted'] == 1) {
-    echo $alert = success_alert("User Delete Successfully");
-}
 
 ?>
 <?php ob_start(); ?>
@@ -86,7 +81,7 @@ $page_title = 'Setting'; ?>
                                             <td class="align-middle px-4"><?php echo $userdata['email'] ?></td>
                                             <td class="align-middle px-4"><?php echo $userdata['created_at'] ?></td>
                                             <td class="align-middle px-4"><?php echo $userdata['last_login'] ?></td>
-                                            <td class="text-center align-middle"><button class="btn btn-primary btn_delete_user" data-user-id="<?php echo $userdata['id'] ?>" data-user-username="<?php echo $userdata['username'] ?>">
+                                            <td class="text-center align-middle"><button class="btn btn-primary btn_delete_user" data-bs-toggle="modal" data-bs-target="#update_user" data-user-id="<?php echo $userdata['id'] ?>" data-user-username="<?php echo $userdata['username'] ?>">
                                                     <div class="p-1">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -130,6 +125,8 @@ $page_title = 'Setting'; ?>
         <?php echo $model_delete_confirm =  modal_confirm_delete('user_delete_confirm', 'Delete User', 'Hello', 'Delete'); ?>
         <!-- Modal Create -->
         <?php echo $model_delete_confirm =  modal_add_user('add_user', 'Create User', 'Hello', 'Create'); ?>
+        <!-- Modal Create -->
+        <?php echo $model_delete_confirm =  modal_update_user('update_user', 'Update User', 'Hello', 'Update'); ?>
         <!-- Usermanagement ------------------------------------------------------------------------------------------------>
 
 
@@ -158,5 +155,6 @@ include("../templates/main_template.php");
 <script>
     // alert delete user
     alert('user_deleted', 'User deleted successfully.', 'Can not delete user.')
+    alert('success', 'User created successfully.', 'Can not create user.')
 </script>
 <?php require("../templates/close_template.php"); ?>

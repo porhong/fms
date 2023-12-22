@@ -194,25 +194,6 @@ function checkFromDB(txt_id, column) {
     }
   };
 }
-function stt() {
-  var state = $("#sw_status").attr("state");
-  var html =
-    '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>';
-  $(".switch_state").html(html);
-  if (state == "true") {
-    var html =
-      '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>';
-  } else {
-    var html =
-      '<span class="fw-medium fs-6 me-2 text-color-success">Active</span>';
-  }
-  $(".switch_state").html(html);
-  if (state == "true") {
-    $("#sw_status").attr("state", "failed");
-  } else {
-    $("#sw_status").attr("state", "true");
-  }
-}
 
 // ------------------------------------------FUNCTION---------------------------------------------------------------
 
@@ -261,3 +242,115 @@ function helpTextSuccess(txt_id, help_id) {
 }
 
 // ------------------------------------------END FUNCTION---------------------------------------------------------------
+
+$(".switch_state").html(
+  '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>'
+);
+function stt() {
+  var state = $("#sw_status").attr("state");
+  var html =
+    '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>';
+  $(".switch_state").html(html);
+  if (state == "true") {
+    var html =
+      '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>';
+  } else {
+    var html =
+      '<span class="fw-medium fs-6 me-2 text-color-success">Active</span>';
+  }
+  $(".switch_state").html(html);
+  if (state == "true") {
+    $("#sw_status").attr("state", "failed");
+  } else {
+    $("#sw_status").attr("state", "true");
+  }
+}
+
+$(document).ready(function () {
+  $(".btn_delete_user").click(function (e) {
+    e.preventDefault();
+    $("#cb_role_update option").removeAttr("selected");
+    $("#txt_username_update").val("");
+    $("#txt_password_update").val("");
+    $("#txt_confirm_password_update").val("");
+    $("#txt_first_name_update").val("");
+    $("#txt_last_name_update").val("");
+    $("#txt_email_update").val("");
+    var userID = $(this).attr("data-user-id");
+    $.ajax({
+      url: `../views/local_api/getUser.php?id=${userID}`,
+      type: "get",
+      dataType: "JSON",
+      success: function (response) {
+        var len = response.length;
+        for (var i = 0; i < len; i++) {
+          var id = response[i].id;
+          var username = response[i].username;
+          var password = response[i].password;
+          var email = response[i].email;
+          var first_name = response[i].first_name;
+          var last_name = response[i].last_name;
+          var status = response[i].status;
+          var role = response[i].role;
+        }
+        $("#txt_username_update").val(username);
+        $("#txt_password_update").val(password);
+        $("#txt_confirm_password_update").val(password);
+        $("#txt_first_name_update").val(first_name);
+        $("#txt_last_name_update").val(last_name);
+        $("#txt_email_update").val(email);
+        $(`#cb_role_update option[value="${role}"]`).attr("selected", true);
+        if (status != 0) {
+          $("#sw_status_update").attr("checked", "checked");
+          var html =
+            '<span class="fw-medium fs-6 me-2 text-color-success">Active</span>';
+        } else {
+          $("#sw_status_update").removeAttr("checked");
+          var html =
+            '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>';
+        }
+        $(".switch_state").html(html);
+      },
+    });
+  });
+});
+function checkFromDB_OnUpdate(txt_id, column) {
+  var username = document.getElementById(txt_id).value;
+  var userID = $(this).attr("data-user-id");
+  const xhttp = new XMLHttpRequest();
+
+  $.ajax({
+    url: `../views/local_api/getUser.php?id=${userID}`,
+    type: "get",
+    dataType: "JSON",
+    success: function (response) {
+      var len = response.length;
+      for (var i = 0; i < len; i++) {
+        var username_DB = response[i].username;
+        var email_DB = response[i].email;
+      }
+      xhttp.open("GET", `local_api/selectUsername.php?q=${username},${column}`);
+      xhttp.send();
+      xhttp.onload = function () {
+        checkResult = this.responseText;
+        console.log(checkResult);
+        if (username != "") {
+          if (username == checkResult) {
+            helpTextDanger(
+              `block_${txt_id}`,
+              txt_id,
+              `help_${txt_id}`,
+              `${column.toUpperCase()} : <b>${username}</b> was existed.`
+            );
+            formVrify();
+          } else {
+            if (username != "") {
+              helpTextSuccess(txt_id, `help_${txt_id}`);
+              formVrify();
+            }
+          }
+        }
+      };
+    },
+  });
+}

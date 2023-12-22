@@ -1,6 +1,5 @@
 <?php
-include "../../sources/function/config.php";
-if (isset($_POST['submit'])) {
+if (isset($_POST['create_user'])) {
     $username = $_POST['txt_username'];
 
     $password = md5($_POST['txt_password']);
@@ -11,13 +10,24 @@ if (isset($_POST['submit'])) {
 
     $email = $_POST['txt_email'];
 
-    $sql = "INSERT INTO `tbl_user`(`username`, `password`, `first_name`, `last_name`, `email`) VALUES ('$username','$password','$first_name','$last_name','$email')";
+    $role = $_POST['cb_role'];
+
+    if (isset($_POST['sw_status'])) {
+
+        $account_status = 1;
+    } else {
+
+        $account_status = 0;
+    }
+
+    echo $account_status . " select = " . $role;
+
+    $sql = "INSERT INTO `tbl_user`(`username`, `password`, `first_name`, `last_name`, `email`, `status`, `role`) VALUES ('$username','$password','$first_name','$last_name','$email','$account_status','$role')";
 
     $result = $conn->query($sql);
 
     if ($result == TRUE) {
-
-        header('Location: ../../views/setting.php?success=1');
+        header('Location: ../views/setting.php?success=1');
         exit;
     } else {
 

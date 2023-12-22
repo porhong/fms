@@ -24,6 +24,20 @@ function alert(param, message_success, message_failed) {
     });
   }
 }
+function alert_login(param, message_success, message_failed) {
+  var alert_status = getUrlParameter(param);
+  if (alert_status == 1) {
+    Toast.fire({
+      icon: "error",
+      title: message_success,
+    });
+  } else if (alert_status == 2) {
+    Toast.fire({
+      icon: "error",
+      title: message_failed,
+    });
+  }
+}
 
 var getUrlParameter = function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1),
