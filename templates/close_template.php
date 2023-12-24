@@ -81,16 +81,18 @@
     // side bar menu active
     var current_title = $(document).attr('title').toLowerCase();
     $(`#sidebar_${current_title}`).addClass("active_bg_sidebar");
-    $(`#sidebar_${current_title} svg`).removeClass("icon_none_active");
-    $(`#sidebar_${current_title} svg`).addClass("active_text_sidebar");
+    $(`#sidebar_${current_title} i`).removeClass("icon_none_active");
+    $(`#side_bar div ul li a span`).addClass("icon_none_active");
+    $(`#sidebar_${current_title} i`).addClass("active_text_sidebar");
     $(`#sidebar_${current_title} span`).addClass("active_text_sidebar");
     // sm_sidebar
-    $(`#sm_sidebar_${current_title} svg`).removeClass("icon_none_active");
+    $(`#sm_sidebar_${current_title} i`).removeClass("icon_none_active");
     $(`#sm_sidebar_${current_title}`).addClass("active_bg_sm_sidebar");
     $(`#sm_sidebar_${current_title}`).addClass("active_text_sm_sidebar");
     //mobile_tabbar
     $(`#tab_${current_title}`).addClass("p-2 d-flex justify-content-center align-items-center tabbar_mobile");
-    $(`#tab_${current_title} b`).removeClass("d-none");
+    $(`#tab_${current_title} b`).removeClass("d-none icon_none_active");
+    $(`#tab_${current_title} i`).removeClass("icon_none_active");
 
     //loding screen
     $(window).ready(function() {

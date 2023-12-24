@@ -38,6 +38,8 @@ if (!isset($_SESSION['Auth'])) {
     <!-- Link SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../controlers/JS/alert.js"></script>
+    <!-- link Icon Scout -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 
 <body>
