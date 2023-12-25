@@ -128,6 +128,7 @@ function formVrify() {
   } else {
     btn_submit.disabled = true;
   }
+  updateFormVrify();
 }
 
 // mail Check
@@ -243,32 +244,13 @@ function helpTextSuccess(txt_id, help_id) {
 
 // ------------------------------------------END FUNCTION---------------------------------------------------------------
 
-$(".switch_state").html(
-  '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>'
-);
-function stt() {
-  var state = $("#sw_status").attr("state");
-  var html =
-    '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>';
-  $(".switch_state").html(html);
-  if (state == "true") {
-    var html =
-      '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>';
-  } else {
-    var html =
-      '<span class="fw-medium fs-6 me-2 text-color-success">Active</span>';
-  }
-  $(".switch_state").html(html);
-  if (state == "true") {
-    $("#sw_status").attr("state", "failed");
-  } else {
-    $("#sw_status").attr("state", "true");
-  }
-}
-
+// public varriable
+var username;
+var email;
+//Get user to update form
 $(document).ready(function () {
-  $(".btn_delete_user").click(function (e) {
-    e.preventDefault();
+  $(".btn_update_user").click(function (e) {
+    $("#sw_status_update").attr("checked", "checked");
     $("#cb_role_update option").removeAttr("selected");
     $("#txt_username_update").val("");
     $("#txt_password_update").val("");
@@ -285,9 +267,9 @@ $(document).ready(function () {
         var len = response.length;
         for (var i = 0; i < len; i++) {
           var id = response[i].id;
-          var username = response[i].username;
+          username = response[i].username;
           var password = response[i].password;
-          var email = response[i].email;
+          email = response[i].email;
           var first_name = response[i].first_name;
           var last_name = response[i].last_name;
           var status = response[i].status;
@@ -300,57 +282,36 @@ $(document).ready(function () {
         $("#txt_last_name_update").val(last_name);
         $("#txt_email_update").val(email);
         $(`#cb_role_update option[value="${role}"]`).attr("selected", true);
-        if (status != 0) {
-          $("#sw_status_update").attr("checked", "checked");
-          var html =
-            '<span class="fw-medium fs-6 me-2 text-color-success">Active</span>';
+        if (status == 0) {
         } else {
-          $("#sw_status_update").removeAttr("checked");
-          var html =
-            '<span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>';
         }
-        $(".switch_state").html(html);
       },
     });
   });
 });
+// check iput form db for edit form
 function checkFromDB_OnUpdate(txt_id, column) {
-  var username = document.getElementById(txt_id).value;
-  var userID = $(this).attr("data-user-id");
-  const xhttp = new XMLHttpRequest();
-
-  $.ajax({
-    url: `../views/local_api/getUser.php?id=${userID}`,
-    type: "get",
-    dataType: "JSON",
-    success: function (response) {
-      var len = response.length;
-      for (var i = 0; i < len; i++) {
-        var username_DB = response[i].username;
-        var email_DB = response[i].email;
-      }
-      xhttp.open("GET", `local_api/selectUsername.php?q=${username},${column}`);
-      xhttp.send();
-      xhttp.onload = function () {
-        checkResult = this.responseText;
-        console.log(checkResult);
-        if (username != "") {
-          if (username == checkResult) {
-            helpTextDanger(
-              `block_${txt_id}`,
-              txt_id,
-              `help_${txt_id}`,
-              `${column.toUpperCase()} : <b>${username}</b> was existed.`
-            );
-            formVrify();
-          } else {
-            if (username != "") {
-              helpTextSuccess(txt_id, `help_${txt_id}`);
-              formVrify();
-            }
-          }
-        }
-      };
-    },
-  });
+  console.log(username);
+  var old_username = username;
+  var new_username = document.getElementById(txt_id).value;
+  var old_email = email;
+  var new_email = document.getElementById(txt_id).value;
+  if (new_username == old_username || new_email == old_email) {
+    helpTextSuccess(txt_id, "help_" + txt_id);
+  } else {
+    checkFromDB(txt_id, column);
+    updateFormVrify();
+  }
 }
+//check error on update form
+function updateFormVrify() {
+  var danger = document.querySelector(".input_error");
+  if (danger == null) {
+    btn_update_user.disabled = false;
+  } else {
+    btn_update_user.disabled = true;
+  }
+}
+$(document).ready(function () {
+  $("#sw_status_update").click(function (e) {});
+});

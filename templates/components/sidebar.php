@@ -35,7 +35,7 @@
         <li class="nav-item">
             <a href="../views/index.php" class="nav-link">
                 <div id="tab_home">
-                <i class="uil uil-estate fs-1 me-4 icon_none_active"></i>
+                    <i class="uil uil-estate fs-2 me-4 icon_none_active"></i>
                     <b class="d-none fs-6"><?php echo $page_title ?></b>
                 </div>
 
@@ -45,7 +45,7 @@
             <a href="../views/report.php" class="nav-link">
 
                 <div id="tab_report">
-                <i class="uil uil-chart-line fs-1 me-4 icon_none_active"></i>
+                    <i class="uil uil-chart-line fs-2 me-4 icon_none_active"></i>
                     <b class="d-none fs-6"><?php echo $page_title ?></b>
                 </div>
             </a>
@@ -54,7 +54,7 @@
             <a href="../views/setting.php" class="nav-link">
 
                 <div id="tab_setting">
-                <i class="uil uil-setting fs-1 me-4 icon_none_active"></i>
+                    <i class="uil uil-setting fs-2 me-4 icon_none_active"></i>
                     <b class="d-none fs-6"><?php echo $page_title ?></b>
                 </div>
             </a>
@@ -81,17 +81,17 @@
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
                 <li class="nav-item">
                     <a id="sm_sidebar_home" href="../views/index.php" class="nav-link py-3 border-bottom" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-                    <i class="uil uil-estate fs-2 icon_none_active"></i>
+                        <i class="uil uil-estate fs-3 icon_none_active"></i>
                     </a>
                 </li>
                 <li>
                     <a id="sm_sidebar_report" href="../views/report.php" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
-                    <i class="uil uil-chart-line fs-2 icon_none_active"></i>
+                        <i class="uil uil-chart-line fs-3 icon_none_active"></i>
                     </a>
                 </li>
                 <li>
                     <a id="sm_sidebar_setting" href="../views/setting.php" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
-                    <i class="uil uil-setting fs-2 icon_none_active"></i>
+                        <i class="uil uil-setting fs-3 icon_none_active"></i>
                     </a>
                 </li>
             </ul>
@@ -135,20 +135,20 @@
             <ul class="nav nav-pills flex-column mb-auto breadcrumb">
                 <li class="mb-2">
                     <a id="sidebar_home" href="../views/index.php" class="nav-link link-body-emphasis p-2 fw-normal p-2 d-flex align-items-center" aria-current="page">
-                    <i class="uil uil-estate fs-3 me-3 icon_none_active"></i>
-                        <span class="icon_none_active">Home</span>
+                        <i class="uil uil-estate fs-4 me-3 icon_none_active"></i>
+                        <span class="icon_none_active fw-medium">Home</span>
                     </a>
                 </li>
                 <li class="mb-2">
                     <a id="sidebar_report" href="../views/report.php" class="nav-link link-body-emphasis p-2 fw-normal d-flex align-items-center">
-                    <i class="uil uil-chart-line fs-3 me-3 icon_none_active"></i>
-                        <span class="icon_none_active">Report</span>
+                        <i class="uil uil-chart-line fs-4 me-3 icon_none_active"></i>
+                        <span class="icon_none_active fw-medium">Report</span>
                     </a>
                 </li>
                 <li id="sidebar_setting" class="mb-2">
                     <a href="../views/setting.php" class="nav-link link-body-emphasis p-2 fw-normal d-flex align-items-center">
-                    <i class="uil uil-setting fs-3 me-3 icon_none_active"></i>
-                        <span class="icon_none_active">Setting</span>
+                        <i class="uil uil-setting fs-4 me-3 icon_none_active"></i>
+                        <span class="icon_none_active fw-medium">Setting</span>
                     </a>
                 </li>
             </ul>
