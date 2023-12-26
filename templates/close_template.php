@@ -53,6 +53,7 @@
             $("#nav_title_mobile").removeClass("d-none");
 
 
+
         } else if (wd < 900) {
             $("#side_bar").addClass("d-none");
             $("#side_bar_small").addClass("d-none");
@@ -63,6 +64,7 @@
             $("#tab_bar").removeClass("d-none");
             $("#content").removeClass("left_margin_content");
             $("#content").removeClass("left_margin_content_small");
+
 
         } else {
             $("#side_bar").removeClass("d-none");

@@ -115,7 +115,7 @@ $page_title = 'Setting'; ?>
 
             <div class="row pt-3">
                 <nav aria-label="...">
-                    <ul class="pagination pagination-sm mb-5 pb-2 d-flex align-items-center ">
+                    <ul class="pagination pagination mb-5 pb-2 d-flex align-items-center ">
                         <li class='page-item link_color'><a class='page-link text-color-primary fw-bold' href='?page=<?php if ($currentPage <= 1) {
                                                                                                                             echo "1";
                                                                                                                         } else {
