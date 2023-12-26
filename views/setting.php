@@ -116,12 +116,12 @@ $page_title = 'Setting'; ?>
             <div class="row pt-3">
                 <nav aria-label="...">
                     <ul class="pagination pagination mb-5 pb-2 d-flex align-items-center ">
-                        <li class='page-item link_color'><a class='page-link text-color-primary fw-bold' href='?page=<?php if ($currentPage <= 1) {
-                                                                                                                            echo "1";
-                                                                                                                        } else {
-                                                                                                                            echo $currentPage - 1;
-                                                                                                                        } ?>'>
-                                <i class="uil uil-previous fs-5"></i> </a>
+                        <li class='page-item link_color'><a class=' text-color-primary fw-bold' href='?page=<?php if ($currentPage <= 1) {
+                                                                                                                echo "1";
+                                                                                                            } else {
+                                                                                                                echo $currentPage - 1;
+                                                                                                            } ?>'>
+                                <i class="uil uil-previous fs-3 me-1"></i> </a>
                         </li>
                         <?php if ($totalPages > 1) {
                             for ($i = 1; $i <= $totalPages; $i++) {
@@ -133,12 +133,12 @@ $page_title = 'Setting'; ?>
                             }
                         }
                         ?>
-                        <li class='page-item link_color'><a class='page-link text-color-primary fw-bold' href='?page=<?php if ($currentPage >= $totalPages) {
-                                                                                                                            echo $totalPages;
-                                                                                                                        } else {
-                                                                                                                            echo $currentPage + 1;
-                                                                                                                        } ?>'>
-                                <i class="uil uil-step-forward fs-5"></i> </a>
+                        <li class='page-item link_color'><a class=' text-color-primary fw-bold' href='?page=<?php if ($currentPage >= $totalPages) {
+                                                                                                                echo $totalPages;
+                                                                                                            } else {
+                                                                                                                echo $currentPage + 1;
+                                                                                                            } ?>'>
+                                <i class="uil uil-step-forward fs-3 ms-1"></i> </a>
                     </ul>
                 </nav>
             </div>
