@@ -98,14 +98,47 @@ $page_title = 'Setting'; ?>
 
             </div>
 
-            <div class="row pt-2">
+            <?php
+            include "../sources/function/config.php";
+            // Pagination links
+            $sql = "SELECT COUNT(*) AS total FROM tbl_user";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $totalRecords = $row["total"];
+            $totalPages = ceil($totalRecords / 9);
+            // Current page number
+            if (isset($_GET['page'])) {
+                $currentPage = $_GET['page'];
+            } else {
+                $currentPage = 1;
+            } ?>
+
+            <div class="row pt-3">
                 <nav aria-label="...">
-                    <ul class="pagination pagination-sm">
-                        <li class="page-item">
-                            <a class="page-link active_bg" href="#">1</a>
+                    <ul class="pagination pagination-sm mb-5 pb-2 d-flex align-items-center ">
+                        <li class='page-item link_color'><a class='page-link text-color-primary fw-bold' href='?page=<?php if ($currentPage <= 1) {
+                                                                                                                            echo "1";
+                                                                                                                        } else {
+                                                                                                                            echo $currentPage - 1;
+                                                                                                                        } ?>'>
+                                <i class="uil uil-previous fs-5"></i> </a>
                         </li>
-                        <li class="page-item link_color"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item link_color"><a class="page-link" href="#">3</a></li>
+                        <?php if ($totalPages > 1) {
+                            for ($i = 1; $i <= $totalPages; $i++) {
+                                if ($i == $currentPage) {
+                                    echo "<li class='page-item link_color'><a class='active page-link bg-color-primary text-color-white fw-medium' href='?page=$i'>$i</a></li> ";
+                                } else {
+                                    echo "<li class='page-item link_color'><a class='page-link text-color-primary fw-medium' href='?page=$i'>$i</a></li> ";
+                                }
+                            }
+                        }
+                        ?>
+                        <li class='page-item link_color'><a class='page-link text-color-primary fw-bold' href='?page=<?php if ($currentPage >= $totalPages) {
+                                                                                                                            echo $totalPages;
+                                                                                                                        } else {
+                                                                                                                            echo $currentPage + 1;
+                                                                                                                        } ?>'>
+                                <i class="uil uil-step-forward fs-5"></i> </a>
                     </ul>
                 </nav>
             </div>
@@ -145,5 +178,6 @@ include("../templates/main_template.php");
     // alert delete user
     alert('user_deleted', 'User deleted successfully.', 'Can not delete user.')
     alert('success', 'User created successfully.', 'Can not create user.')
+    alert('update_success', 'User updated successfully.', 'Can not update user.')
 </script>
 <?php require("../templates/close_template.php"); ?>

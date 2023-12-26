@@ -37,7 +37,6 @@ if (!isset($_SESSION['Auth'])) {
     <script src="../controlers/JS/alert.js"></script>
     <!-- link Icon Scout -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-</head>
 
 <body>
     <div class="loader">

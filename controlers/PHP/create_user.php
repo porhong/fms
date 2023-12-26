@@ -12,15 +12,9 @@ if (isset($_POST['create_user'])) {
 
     $role = $_POST['cb_role'];
 
-    if (isset($_POST['sw_status'])) {
+    $account_status = $_POST['status'];
 
-        $account_status = 1;
-    } else {
-
-        $account_status = 0;
-    }
-
-    echo $account_status . " select = " . $role;
+    echo $account_status;
 
     $sql = "INSERT INTO `tbl_user`(`username`, `password`, `first_name`, `last_name`, `email`, `status`, `role`) VALUES ('$username','$password','$first_name','$last_name','$email','$account_status','$role')";
 
@@ -32,6 +26,8 @@ if (isset($_POST['create_user'])) {
     } else {
 
         echo "Error:" . $sql . "<br>" . $conn->error;
+        header('Location: ../views/setting.php?update_success=2');
+        exit;
     }
     $conn->close();
 }

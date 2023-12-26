@@ -35,6 +35,14 @@ if (isset($_SESSION['Auth'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>;
+    <!-- PWA -->
+    <link rel="manifest" href="../sources/function/PWA/manifest.json">
+    <script>
+        //if browser support service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../sources/function/PWA/sw.js');
+        };
+    </script>
 </head>
 
 <body>

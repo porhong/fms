@@ -54,6 +54,7 @@ function modal_add_user($modal_id_get, $modal_title_get, $modal_content_get, $mo
                         <div class="header-text">
                             <p class="auth-title-2 pt-4 fs-5">Please fill the information below</p>
                         </div>
+
                         <div id="block_txt_username" class="form-floating form-floating input mb-3">
                             <input oninput="verifyRegisterInput('txt_username','Username is required')" onblur="checkFromDB('txt_username','username')" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username" name="txt_username" id="txt_username" required>
                             <label class="form-lable" for="txt_username">Username</label>
@@ -93,13 +94,21 @@ function modal_add_user($modal_id_get, $modal_title_get, $modal_content_get, $mo
                             </select>
                             <label for="floatingSelect">Role</label>
                         </div>
-                        <div class="d-flex align-items-center">
-
-                            <div class="form-check form-switch form-switch-lg">
-                                <input class="form-check-input" type="checkbox" role="switch1" id="sw_status" name="sw_status">
+                        <div id="account_status" class="d-flex align-items-center border border-1 rounded-2 p-3 form-floating input-shadow">
+                            <div class="me-3">
+                                <span class="fw-medium">Status</span>
                             </div>
-                            <div class="switch_state">
-                                <span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>
+                            <div class="form-check me-2">
+                                <input value="1" class="form-check-input " type="radio" name="status" id="status_1">
+                                <label class="form-check-label" for="status_1">
+                                    Active
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input value="0" class="form-check-input " type="radio" name="status" id="status_2" checked>
+                                <label class="form-check-label" for="status_2">
+                                    Disactive
+                                </label>
                             </div>
                         </div>
 
@@ -130,7 +139,7 @@ function modal_add_user($modal_id_get, $modal_title_get, $modal_content_get, $mo
 function modal_update_user($modal_id_get, $modal_title_get, $modal_content_get, $modal_button_title_get)
 {
     include '../sources/function/config.php';
-    include '../controlers/PHP/create_user.php';
+    include '../controlers/PHP/update_user.php';
     $sql = "SELECT * FROM `tbl_roles` ORDER BY id DESC";
     $result = $conn->query($sql);
     ob_start();
@@ -150,16 +159,20 @@ function modal_update_user($modal_id_get, $modal_title_get, $modal_content_get, 
                         <div class="header-text">
                             <p class="auth-title-2 pt-4 fs-5">Please check the information below</p>
                         </div>
+                        <div id="block_txt_id_update" class="form-floating form-floating input mb-3">
+                            <input readonly oninput="verifyRegisterInput('txt_id_update','ID is required')" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="User ID" name="txt_id_update" id="txt_id_update">
+                            <label class="form-lable" for="txt_username">ID</label>
+                        </div>
                         <div id="block_txt_username_update" class="form-floating form-floating input mb-3 ">
                             <input oninput="verifyRegisterInput('txt_username_update','Username is required')" onblur="checkFromDB_OnUpdate('txt_username_update','username')" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username" name="txt_username_update" id="txt_username_update" required>
                             <label class="form-lable" for="txt_username_update">Username</label>
                         </div>
                         <div id="block_txt_password_update" class="form-floating input mb-3">
-                            <input oninput="verifyPassword()" type="password" class="form-control form-control-lg bg-light fs-6 border" placeholder="Password" name="txt_password_update" id="txt_password_update" required>
+                            <input oninput="verify_update_Password()" type="password" class="form-control form-control-lg bg-light fs-6 border" placeholder="Password" name="txt_password_update" id="txt_password_update" required>
                             <label class="form-lable" for="txt_password_update">Password</label>
                         </div>
                         <div id="block_txt_confirm_password_update" class="form-floating input mb-3">
-                            <input oninput="verifyPassword()" type="password" class="form-control form-control-lg bg-light fs-6 border" placeholder="Confirm Password" name="txt_confirm_password_update" id="txt_confirm_password_update" required>
+                            <input oninput="verify_update_Password()" type="password" class="form-control form-control-lg bg-light fs-6 border" placeholder="Confirm Password" name="txt_confirm_password_update" id="txt_confirm_password_update" required>
                             <label class="form-lable" for="txt_confirm_password_update">Confirm Password</label>
                         </div>
                         <div class="row mb-3">
@@ -190,23 +203,31 @@ function modal_update_user($modal_id_get, $modal_title_get, $modal_content_get, 
                             <label for="floatingSelect">Role</label>
                         </div>
 
-                        <div class="d-flex align-items-center">
-                            <div class="form-check form-switch form-switch-lg">
-                                <input class="form-check-input" type="checkbox" role="switch" id="sw_status_update" name="sw_status_update">
+                        <div id="account_status" class="d-flex align-items-center border border-1 rounded-2 p-3 form-floating input-shadow">
+                            <div class="me-3">
+                                <span class="fw-medium">Status</span>
                             </div>
-                            <div class="switch_state_update">
-                                <span class="fw-medium fs-6 me-2 text-color-error">Disactive</span>
+                            <div class="form-check me-2">
+                                <input value="1" class="form-check-input " type="radio" name="status_update" id="updat_status_1">
+                                <label class="form-check-label" for="updat_status_1">
+                                    Active
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input value="0" class="form-check-input " type="radio" name="status_update" id="updat_status_2" checked>
+                                <label class="form-check-label" for="updat_status_2">
+                                    Disactive
+                                </label>
                             </div>
                         </div>
                 </div>
-
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <a class="btn_update"><button id="btn_update_user" value="update_user" name="btn_update_user" type="submit" class="btn btn-primary"><?php echo $modal_button_title_get ?></button></a>
+                    <a class="btn_update"><button id="btn_update_user" value="btn_update_user" name="btn_update_user" type="submit" class="btn btn-primary"><?php echo $modal_button_title_get ?></button></a>
 
                 </div>
                 </form>
+
             </div>
         </div>
     </div>

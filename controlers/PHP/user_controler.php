@@ -129,7 +129,20 @@ function logout()
 function getUser()
 {
   include "../sources/function/config.php";
-  $sql = "SELECT tbl_user.id, `username`, `password`, `first_name`, `last_name`, `email`, `created_at`, `status`, `last_login`, tbl_roles.name AS 'role' FROM `tbl_user` INNER JOIN tbl_roles ON tbl_roles.id=tbl_user.role ORDER BY `id` ASC;";
+  // Number of records per page
+  $recordsPerPage = 9;
+
+  // Current page number
+  if (isset($_GET['page'])) {
+    $currentPage = $_GET['page'];
+  } else {
+    $currentPage = 1;
+  }
+  // Calculate the starting record index
+  $startFrom = ($currentPage - 1) * $recordsPerPage;
+
+  $sql = "SELECT tbl_user.id, `username`, `password`, `first_name`, `last_name`, `email`, `created_at`, `status`, `last_login`, tbl_roles.name AS 'role' FROM `tbl_user` INNER JOIN tbl_roles ON tbl_roles.id=tbl_user.role ORDER BY `id` ASC LIMIT $startFrom, $recordsPerPage ";
+
   $result = $conn->query($sql);
   return $result;
   $conn->close();

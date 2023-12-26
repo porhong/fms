@@ -31,7 +31,16 @@
   color: var(--danger) !important;
   text-decoration: none !important;
 }
-
+.text-color-white {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+.input-shadow {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05) !important;
+}
+.bg-color-primary {
+  background-color: var(--primary) !important;
+}
 /* Global */
 body {
   font-family: poppins;
