@@ -31,10 +31,10 @@ if (isset($_POST['btn_update_user'])) {
     $result = $conn->query($sql);
 
     if ($result == TRUE) {
-        header('Location: ../views/setting.php?update_success=1');
+        header('Location: ../views/admin.php?update_success=1');
         exit;
     } else {
-        header('Location: ../views/setting.php?update_success=2');
+        header('Location: ../views/admin.php?update_success=2');
         exit;
         echo "Error:" . $sql . "<br>" . $conn->error;
     }

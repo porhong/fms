@@ -92,7 +92,7 @@
     $(`#sm_sidebar_${current_title}`).addClass("active_bg_sm_sidebar");
     $(`#sm_sidebar_${current_title}`).addClass("active_text_sm_sidebar");
     //mobile_tabbar
-    $(`#tab_${current_title}`).addClass("p-2 d-flex justify-content-center align-items-center tabbar_mobile");
+    $(`#tab_${current_title}`).addClass("p-3 d-flex justify-content-center align-items-center tabbar_mobile");
     $(`#tab_${current_title} b`).removeClass("d-none icon_none_active");
     $(`#tab_${current_title} i`).removeClass("icon_none_active");
 
@@ -100,8 +100,9 @@
     $(window).ready(function() {
         $(".loader").fadeOut("fast");
     });
+    //Lazy loading Images
+    $('img').attr('loading', 'lazy');
 </script>
-
 
 </body>
 

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (isset($_COOKIE['REMEMBERED'])) {
     $_SESSION['Auth'] = $_COOKIE["REMEMBERED"];
     $_SESSION['userID'] = $_COOKIE["USER_ID"];
@@ -19,8 +20,8 @@ if (!isset($_SESSION['Auth'])) {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../sources/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel=" stylesheet" href="../sources/style.css" />
     <!-- Link Bootstrap5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -37,6 +38,16 @@ if (!isset($_SESSION['Auth'])) {
     <script src="../controlers/JS/alert.js"></script>
     <!-- link Icon Scout -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- PWA -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#3e58a7" />
+    <link rel="manifest" crossorigin="use-credentials" href="../manifest.json">
+    <script>
+        //if browser support service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../service-worker.js');
+        };
+    </script>
 
 <body>
     <div class="loader">

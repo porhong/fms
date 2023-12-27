@@ -36,11 +36,11 @@ if (isset($_SESSION['Auth'])) {
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>;
     <!-- PWA -->
-    <link rel="manifest" href="../sources/function/PWA/manifest.json">
+    <link rel="manifest" crossorigin="use-credentials" href="../manifest.json">
     <script>
         //if browser support service worker
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../sources/function/PWA/sw.js');
+            navigator.serviceWorker.register('../service-worker.js');
         };
     </script>
 </head>

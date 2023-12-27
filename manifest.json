@@ -1,0 +1,61 @@
+{
+  "short_name": "លុយ",
+  "name": "លុយ by Badbot",
+  "description": "គ្រប់គ្រងហិរញ្ញវត្ថុរបស់អ្នកជាមួយលុយ",
+  "icons": [
+    {
+      "src": "./sources/img/maskable_logo_192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./sources/img/maskable_logo_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#3e58a7",
+
+  "screenshots": [
+    {
+      "src": "./sources/img/login_screen.jpg",
+      "sizes": "1080x2316",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Wonder Widgets"
+    },
+    {
+      "src": "./sources/img/login_screen.jpg",
+      "sizes": "1080x2316",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Wonder Widgets"
+    },
+    {
+      "src": "./sources/img/login_screen.jpg",
+      "sizes": "1080x2316",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Wonder Widgets"
+    },
+    {
+      "src": "./sources/img/login_screen.jpg",
+      "sizes": "1080x2316",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Wonder Widgets"
+    },
+    {
+      "src": "./sources/img/login_screen.jpg",
+      "sizes": "1080x2316",
+      "type": "image/jpg",
+      "form_factor": "wide",
+      "label": "Wonder Widgets"
+    }
+  ]
+}

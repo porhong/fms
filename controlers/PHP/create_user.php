@@ -21,12 +21,12 @@ if (isset($_POST['create_user'])) {
     $result = $conn->query($sql);
 
     if ($result == TRUE) {
-        header('Location: ../views/setting.php?success=1');
+        header('Location: ../views/admin.php?success=1');
         exit;
     } else {
 
         echo "Error:" . $sql . "<br>" . $conn->error;
-        header('Location: ../views/setting.php?update_success=2');
+        header('Location: ../views/admin.php?update_success=2');
         exit;
     }
     $conn->close();

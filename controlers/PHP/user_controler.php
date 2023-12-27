@@ -1,5 +1,6 @@
 
 <?php
+
 // Register function
 function register()
 {
@@ -34,6 +35,7 @@ function register()
 
 function login()
 {
+
   include "../sources/function/config.php";
   if (isset($_POST['submit'])) {
     $username = $_POST['txt_username_email'];

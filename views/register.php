@@ -19,6 +19,14 @@ register();
     <script type="text/javascript" src="../controlers/JS/User_JS_Controler.js"></script>
     <!-- Link JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- PWA -->
+    <link rel="manifest" crossorigin="use-credentials" href="../manifest.json">
+    <script>
+        //if browser support service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../service-worker.js');
+        };
+    </script>
 </head>
 
 <body class="set-bg-to-white">
