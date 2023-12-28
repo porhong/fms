@@ -1,4 +1,10 @@
 <?php
+// Current page number
+if (isset($_GET['page'])) {
+    $currentPage = $_GET['page'];
+} else {
+    $currentPage = 1;
+}
 if (isset($_POST['btn_update_user'])) {
     $user_id = $_POST['txt_id_update'];
 
@@ -31,10 +37,10 @@ if (isset($_POST['btn_update_user'])) {
     $result = $conn->query($sql);
 
     if ($result == TRUE) {
-        header('Location: ../views/admin.php?update_success=1');
+        header('Location: ../views/admin.php?update_success=1&page=' . $currentPage);
         exit;
     } else {
-        header('Location: ../views/admin.php?update_success=2');
+        header('Location: ../views/admin.php?update_success=2&page=' . $currentPage);
         exit;
         echo "Error:" . $sql . "<br>" . $conn->error;
     }

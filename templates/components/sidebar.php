@@ -1,22 +1,24 @@
 <!-- Top Navbar -->
-<nav id="top_bar" class="navbar bg-light border-bottom fixed-top shadow top_bar">
+<nav id="top_bar" class="navbar fixed-top top_bar d-flex justify-item-center">
     <ul class="navbar-nav nav-justified w-100 list-group list-group-horizontal">
         <li class="nav-item">
-            <a id="nav_title" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y" href="#">
+            <a id="nav_title" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y d-none" href="#">
                 <img src="../sources/img/logo.svg" width="70" height="70" class="img-fluid">
                 <b class="d-inline-block align-text-top text-color-primary">Badbot Solution</b>
             </a>
-            <a id="nav_title_mobile" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y" href="#">
+            <a id="nav_title_mobile" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y d-none" href="#">
                 <img src="../sources/img/logo.svg" width="70" height="70" class="img-fluid">
             </a>
-
+            <a id="nav_mobile" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y d-none" href="#">
+                <span class="fw-bold ps-3 text-color-primary">Welcome <?php echo $_SESSION["lastName"] ?>!</span>
+            </a>
         </li>
         <li class="nav-item">
-            <div id="nav_profile" style="padding-right: 6rem;" class="dropdown position-absolute top-50 start-100 translate-middle ">
+            <div id="nav_profile" style="padding-right: 6rem;" class="dropdown position-absolute top-50 start-100 translate-middle d-none">
                 <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle">
+                    <img src="https://github.com/mdo.png" alt="" width="42" height="42" class="rounded-circle">
                 </a>
-                <ul style="margin-top: 2.5rem;" class="dropdown-menu text-small shadow">
+                <ul style="margin-top: 3.5rem; margin-right: 5.5rem;" class="dropdown-menu text-small shadow">
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li>
                         <hr class="dropdown-divider">
@@ -25,37 +27,63 @@
                 </ul>
             </div>
         </li>
+        <div class="row">
+            <a id="nav_mobile_back" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y d-flex d-none" href="#">
+                <i class="uil uil-angle-left-b lg-icon-size ms-1 text-color-primary"></i>
+                <h2 class=" card-title d-flex align-items-center text-color-primary ms-2"><span class="fw-bold fs-4"><?php echo $page_title ?></span></h2>
+            </a>
+
+        </div>
     </ul>
 </nav>
 
 
 <!-- Mobile Tabbar -->
-<nav id="tab_bar" class="navbar border-top fixed-bottom tab_bar">
-    <ul class="navbar-nav nav-justified w-100 list-group list-group-horizontal align-items-center">
+<nav id="tab_bar" class="navbar fixed-bottom tab_bar">
+    <ul class="navbar-nav d-flex nav-justified w-100 list-group list-group-horizontal align-items-center">
         <li class="nav-item">
-            <a href="../views/index.php" class="nav-link">
+            <a href="../views/index.php" class="nav-link d-flex align-items-center justify-content-center">
                 <div id="tab_home">
-                    <i class="uil uil-estate fs-2 me-4 icon_none_active"></i>
-                    <b class="d-none fs-6"><?php echo $page_title ?></b>
+                    <i class="uil uil-estate fs-2 icon_none_active"></i>
+
                 </div>
 
             </a>
         </li>
         <li class="nav-item">
-            <a href="../views/report.php" class="nav-link">
+            <a href="../views/report.php" class="nav-link d-flex align-items-center justify-content-center">
 
                 <div id="tab_report">
-                    <i class="uil uil-chart-line fs-2 me-4 icon_none_active"></i>
-                    <b class="d-none fs-6"><?php echo $page_title ?></b>
+                    <i class="uil uil-chart-line fs-2 icon_none_active"></i>
+
                 </div>
             </a>
         </li>
         <li class="nav-item">
-            <a href="../views/setting.php" class="nav-link">
+            <a href="../views/create.php" class="nav-link d-flex align-items-center justify-content-center position-relative">
 
-                <div id="tab_setting">
-                    <i class="uil uil-setting fs-2 me-4 icon_none_active"></i>
-                    <b class="d-none fs-6"><?php echo $page_title ?></b>
+                <div id="tab_add">
+
+                    <div class="rounded-circle p-3 border-2 border border-1 bg-color-primary"><i class="uil uil-book-medical fs-1 text-color-white"></i></div>
+
+
+                </div>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../views/budget.php" class="nav-link d-flex align-items-center justify-content-center">
+
+                <div id="tab_budget">
+                    <i class="uil uil-money-stack fs-2 icon_none_active"></i>
+                </div>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../views/more.php" class="nav-link d-flex align-items-center justify-content-center">
+
+                <div id="tab_more">
+                    <i class="uil uil-apps fs-2 icon_none_active"></i>
+
                 </div>
             </a>
         </li>
@@ -72,8 +100,8 @@
 
 
 
-<div style="width: 5vw; padding: 0;" class="position-fixed h-100 col">
-    <div id="side_bar_small" class="col">
+<div id="side_bar_small" style="width: 5vw; padding: 0;" class="position-fixed h-100 col d-none">
+    <div class="col">
         <!-- small sidebar -->
         <div class="d-flex flex-column flex-shrink-0 bg-light h-100 shadow" style="width: 4.5rem;">
             <div style="padding-top: 4.5rem;" class="align-self-center">
@@ -90,8 +118,13 @@
                     </a>
                 </li>
                 <li>
-                    <a id="sm_sidebar_setting" href="../views/setting.php" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
-                        <i class="uil uil-setting fs-3 icon_none_active"></i>
+                    <a id="sm_sidebar_budget" href="../views/budget.php" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                        <i class="uil uil-money-stack fs-3 icon_none_active"></i>
+                    </a>
+                </li>
+                <li>
+                    <a id="sm_sidebar_more" href="../views/more.php" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                        <i class="uil uil-apps fs-3 icon_none_active"></i>
                     </a>
                 </li>
             </ul>
@@ -145,10 +178,16 @@
                         <span class="icon_none_active fw-medium">Report</span>
                     </a>
                 </li>
-                <li id="sidebar_setting" class="mb-2">
-                    <a href="../views/setting.php" class="nav-link link-body-emphasis p-2 fw-normal d-flex align-items-center">
-                        <i class="uil uil-setting fs-4 me-3 icon_none_active"></i>
-                        <span class="icon_none_active fw-medium">Setting</span>
+                <li id="sidebar_budget" class="mb-2">
+                    <a href="../views/budget.php" class="nav-link link-body-emphasis p-2 fw-normal d-flex align-items-center">
+                        <i class="uil uil-money-stack fs-4 me-3 icon_none_active"></i>
+                        <span class="icon_none_active fw-medium">Budget</span>
+                    </a>
+                </li>
+                <li id="sidebar_more" class="mb-2">
+                    <a href="../views/more.php" class="nav-link link-body-emphasis p-2 fw-normal d-flex align-items-center">
+                        <i class="uil uil-apps fs-4 me-3 icon_none_active"></i>
+                        <span class="icon_none_active fw-medium">More</span>
                     </a>
                 </li>
             </ul>

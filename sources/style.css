@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Nokora:wght@100;300;400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* Variable */
 :root {
   --primary: #3e58a7;
   --secondary: #467cbf;
-  --white: #fff;
+  --white: #ffffff;
   --success: #6eac90;
   --danger: #dc3545;
   --warning: #f9bc03;
-  --bg: #ecececec;
+  --bg: #ffffff;
   --boarder: rgba(128, 128, 128, 0.3);
 }
 
@@ -41,14 +43,20 @@
 .bg-color-primary {
   background-color: var(--primary) !important;
 }
+.lg-icon-size {
+  font-size: 2.5rem !important;
+}
 /* Global */
 body {
-  font-family: poppins;
-  background: var(--bg);
+  font-family: "Nokora", sans-serif !important;
+  background: var(--bg) !important;
 }
 .link_color {
   color: var(--primary) !important;
   text-decoration: none !important;
+}
+i {
+  box-sizing: border-box !important;
 }
 
 /* Scroll bar stylings */
@@ -123,18 +131,22 @@ body {
 .top_margin_content {
   padding-top: 6rem !important;
 }
+.top_margin_content_mobile {
+  padding-top: 5rem !important;
+}
 .top_bar {
+  padding-top: 4.5rem !important;
+  background-color: var(--white) !important;
+}
+.top_bar_mobile {
   padding-top: 3.5rem !important;
   background-color: var(--white) !important;
 }
 
 .tab_bar {
   background-color: var(--white) !important;
-  padding-top: 0.72rem !important;
-  padding-bottom: 0.72rem !important;
-  box-shadow: 3px -3px 30px -8px rgba(0, 0, 0, 0.3);
-  border-top-left-radius: 1.5rem !important;
-  border-top-right-radius: 1.5rem !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
 .tab_bar ul li a svg {
   color: var(--primary);
