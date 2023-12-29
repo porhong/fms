@@ -40,7 +40,7 @@ if (!isset($_SESSION['Auth'])) {
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!-- PWA -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#3e58a7" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="manifest" crossorigin="use-credentials" href="../manifest.json">
     <script>
         //if browser support service worker

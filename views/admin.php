@@ -32,12 +32,12 @@ $page_title = 'Administrator'; ?>
                         <tr>
                             <th class="px-4" scope="col">ID</th>
                             <th class="px-4" scope="col">Username</th>
-                            <th class="px-4" scope="col">Role</th>
-                            <th class="px-4" scope="col">First Name</th>
-                            <th class="px-4" scope="col">Last Name</th>
-                            <th class="px-4" scope="col">Email</th>
-                            <th class="px-4" scope="col">Created At</th>
-                            <th class="px-4" scope="col">Last Login</th>
+                            <th class="px-4 d-non-mobile" scope="col">Role</th>
+                            <th class="px-4 d-non-mobile" scope="col">First Name</th>
+                            <th class="px-4 d-non-mobile" scope="col">Last Name</th>
+                            <th class="px-4 d-non-mobile" scope="col">Email</th>
+                            <th class="px-4 d-non-mobile" scope="col">Created At</th>
+                            <th class="px-4 d-non-mobile" scope="col">Last Login</th>
                             <th class="px-4" scope="col">Edit Account</th>
                             <th class="px-4" scope="col">Delete Account</th>
                         </tr>
@@ -53,12 +53,12 @@ $page_title = 'Administrator'; ?>
                                 <tr>
                                     <th class="align-middle px-4" scope="row"><?php echo $userdata['id'] ?> </th>
                                     <td class="align-middle px-4"><?php echo $userdata['username'] ?></td>
-                                    <td class="align-middle px-4"><?php echo $userdata['role'] ?></td>
-                                    <td class="align-middle px-4"><?php echo $userdata['first_name'] ?></td>
-                                    <td class="align-middle px-4"><?php echo $userdata['last_name'] ?></td>
-                                    <td class="align-middle px-4"><?php echo $userdata['email'] ?></td>
-                                    <td class="align-middle px-4"><?php echo $userdata['created_at'] ?></td>
-                                    <td class="align-middle px-4"><?php echo $userdata['last_login'] ?></td>
+                                    <td class="align-middle px-4 d-non-mobile"><?php echo $userdata['role'] ?></td>
+                                    <td class="align-middle px-4 d-non-mobile"><?php echo $userdata['first_name'] ?></td>
+                                    <td class="align-middle px-4 d-non-mobile"><?php echo $userdata['last_name'] ?></td>
+                                    <td class="align-middle px-4 d-non-mobile"><?php echo $userdata['email'] ?></td>
+                                    <td class="align-middle px-4 d-non-mobile"><?php echo $userdata['created_at'] ?></td>
+                                    <td class="align-middle px-4 d-non-mobile"><?php echo $userdata['last_login'] ?></td>
                                     <td class="text-center align-middle"><button class="btn btn-primary btn_update_user" data-bs-toggle="modal" data-bs-target="#update_user" data-user-id="<?php echo $userdata['id'] ?>" data-user-username="<?php echo $userdata['username'] ?>">
                                             <div class="p-1">
                                                 <i class="uil uil-edit fs-5"></i>

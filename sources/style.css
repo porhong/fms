@@ -37,19 +37,35 @@
   color: var(--white) !important;
   text-decoration: none !important;
 }
+.text-color-secondary {
+  color: var(--secondary) !important;
+  text-decoration: none !important;
+}
 .input-shadow {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05) !important;
 }
 .bg-color-primary {
   background-color: var(--primary) !important;
 }
+.bg-color-danger {
+  background-color: var(--danger) !important;
+}
 .lg-icon-size {
   font-size: 2.5rem !important;
+}
+.md-icon-size {
+  font-size: 1.5rem !important;
+}
+.md-square-icon-bg {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  border-radius: 0.5rem !important;
 }
 /* Global */
 body {
   font-family: "Nokora", sans-serif !important;
   background: var(--bg) !important;
+  margin-bottom: 4rem !important;
 }
 .link_color {
   color: var(--primary) !important;
@@ -57,6 +73,10 @@ body {
 }
 i {
   box-sizing: border-box !important;
+}
+.hover:hover {
+  background-color: var(--secondary) !important;
+  color: var(--white) !important;
 }
 
 /* Scroll bar stylings */
@@ -135,18 +155,18 @@ i {
   padding-top: 5rem !important;
 }
 .top_bar {
-  padding-top: 4.5rem !important;
+  padding-top: 4rem !important;
   background-color: var(--white) !important;
 }
 .top_bar_mobile {
-  padding-top: 3.5rem !important;
+  padding-top: 3.6rem !important;
   background-color: var(--white) !important;
 }
 
 .tab_bar {
   background-color: var(--white) !important;
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+  padding-top: 0.45rem !important;
+  padding-bottom: 0.45rem !important;
 }
 .tab_bar ul li a svg {
   color: var(--primary);
@@ -207,6 +227,12 @@ i {
   background-color: var(--danger) !important;
   border: none !important;
 }
+.menu-title-fs {
+  font-size: 1.1rem !important;
+}
+.menu-sub-title-fs {
+  font-size: 0.8rem !important;
+}
 /* custom toggle switch */
 
 .form-switch.form-switch-lg {
@@ -227,7 +253,7 @@ i {
 }
 /* -------------------------------------------------- */
 /* for Small screen */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
   div.header-text .auth-title-1 {
     text-align: center;
   }
@@ -250,6 +276,9 @@ i {
   }
   .icon_back {
     visibility: hidden !important;
+  }
+  .d-non-mobile {
+    display: none !important;
   }
 }
 /* -------------------------------------------------- */

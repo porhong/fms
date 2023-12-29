@@ -18,8 +18,8 @@
   ],
   "start_url": "./",
   "background_color": "#ffffff",
-  "display": "fullscreen",
-  "theme_color": "#3e58a7",
+  "display": "standalone",
+  "theme_color": "#ffffff",
 
   "screenshots": [
     {
