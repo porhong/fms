@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_WARNING | E_PARSE);
 session_start();
 
 if (isset($_COOKIE['REMEMBERED'])) {
@@ -48,9 +49,14 @@ if (!isset($_SESSION['Auth'])) {
             navigator.serviceWorker.register('../service-worker.js');
         };
     </script>
+    <!-- Lordicon -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="../sources/function/soon.js"></script>
 
 <body>
-    <div class="loader">
-
+    <div class="loader position-relative">
+        <div class="d-flex position-absolute top-50 start-50 translate-middle">
+            <img style="width: 4em;" src="../sources/img/loading.gif" alt="">
+        </div>
     </div>
     <?php require("../templates/components/sidebar.php"); ?>

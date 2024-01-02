@@ -103,6 +103,10 @@
     $(window).ready(function() {
         $(".loader").fadeOut("fast");
     });
+
+    $(window).ready(function() {
+        $(".top_over").fadeIn("slow");
+    });
     //Lazy loading Images
     $('img').attr('loading', 'lazy');
     //Back to previous page

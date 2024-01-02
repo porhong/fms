@@ -16,46 +16,13 @@ $page_title = 'More';
     <div class="col ms-lg-3 me-lg-3">
         <div class="card input-shadow">
             <div class="row card-body d-xl-flex align-items-center">
-                <a class=" d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/admin.php">
+                <a class=" d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/profile.php">
                     <div class="col-2">
-                        <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-book-reader md-icon-size"></i></div>
+                        <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-user-circle md-icon-size"></i></div>
                     </div>
                     <div class="col-8 ps-lg-3 ps-3">
-                        <span class="menu-title-fs fw-bold row">User Management</span>
-                        <span class="menu-sub-title-fs row text-color-secondary">.Create .Edit .Delete User</span>
-                    </div>
-                    <div class="col-2 d-xxl-none d-flex justify-content-center"><i class="uil uil-angle-right lg-icon-size"></i></div>
-                </a>
-                <hr class="d-xl-none">
-                <a class="d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/admin.php">
-                    <div class="col-2">
-                        <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-book-reader md-icon-size"></i></div>
-                    </div>
-                    <div class="col-8 ps-lg-3 ps-3">
-                        <span class="menu-title-fs fw-bold row">User Management</span>
-                        <span class="menu-sub-title-fs row text-color-secondary">.Create .Edit .Delete User</span>
-                    </div>
-                    <div class="col-2 d-xxl-none d-flex justify-content-center"><i class="uil uil-angle-right lg-icon-size"></i></div>
-                </a>
-                <hr class="d-xl-none">
-                <a class="d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/admin.php">
-                    <div class="col-2">
-                        <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-book-reader md-icon-size"></i></div>
-                    </div>
-                    <div class="col-8 ps-lg-3 ps-3">
-                        <span class="menu-title-fs fw-bold row">User Management</span>
-                        <span class="menu-sub-title-fs row text-color-secondary">.Create .Edit .Delete User</span>
-                    </div>
-                    <div class="col-2 d-xxl-none d-flex justify-content-center"><i class="uil uil-angle-right lg-icon-size"></i></div>
-                </a>
-                <hr class="d-xl-none">
-                <a class="d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/admin.php">
-                    <div class="col-2">
-                        <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-book-reader md-icon-size"></i></div>
-                    </div>
-                    <div class="col-8 col-xxl-10 ps-lg-3 ps-3">
-                        <span class="menu-title-fs fw-bold row">User Management</span>
-                        <span class="menu-sub-title-fs row text-color-secondary">.Create .Edit .Delete User</span>
+                        <span class="menu-title-fs fw-bold row">Profile</span>
+                        <span class="menu-sub-title-fs row text-color-secondary">Manage your information</span>
                     </div>
                     <div class="col-2 d-xxl-none d-flex justify-content-center"><i class="uil uil-angle-right lg-icon-size"></i></div>
                 </a>
@@ -78,39 +45,6 @@ $page_title = 'More';
                     </div>
                     <div class="col-2 d-xxl-none d-flex justify-content-center"><i class="uil uil-angle-right lg-icon-size"></i></div>
                 </a>
-                <hr class="d-xl-none">
-                <a class="d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/admin.php">
-                    <div class="col-2">
-                        <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-book-reader md-icon-size"></i></div>
-                    </div>
-                    <div class="col-8 ps-lg-3 ps-3">
-                        <span class="menu-title-fs fw-bold row">User Management</span>
-                        <span class="menu-sub-title-fs row text-color-secondary">.Create .Edit .Delete User</span>
-                    </div>
-                    <div class="col-2 d-xxl-none d-flex justify-content-center"><i class="uil uil-angle-right lg-icon-size"></i></div>
-                </a>
-                <hr class="d-xl-none">
-                <a class="d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/admin.php">
-                    <div class="col-2">
-                        <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-book-reader md-icon-size"></i></div>
-                    </div>
-                    <div class="col-8 ps-lg-3 ps-3">
-                        <span class="menu-title-fs fw-bold row">User Management</span>
-                        <span class="menu-sub-title-fs row text-color-secondary">.Create .Edit .Delete User</span>
-                    </div>
-                    <div class="col-2 d-xxl-none d-flex justify-content-center"><i class="uil uil-angle-right lg-icon-size"></i></div>
-                </a>
-                <hr class="d-xl-none">
-                <a class="d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/admin.php">
-                    <div class="col-2">
-                        <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-book-reader md-icon-size"></i></div>
-                    </div>
-                    <div class="col-8 col-xxl-10 ps-lg-3 ps-3">
-                        <span class="menu-title-fs fw-bold row">User Management</span>
-                        <span class="menu-sub-title-fs row text-color-secondary">.Create .Edit .Delete User</span>
-                    </div>
-                    <div class="col-2 d-xxl-none d-flex justify-content-center"><i class="uil uil-angle-right lg-icon-size"></i></div>
-                </a>
             </div>
         </div>
     </div>
@@ -120,7 +54,7 @@ $page_title = 'More';
     <div class="col ms-lg-3 me-lg-3">
         <div class="card input-shadow">
             <div class="row card-body d-xl-flex align-items-center">
-                <a class="d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/admin.php">
+                <a class="d-flex align-items-center text-color-primary col-xl-4 col-xxl-3 p-2 " href="../views/setting.php">
                     <div class="col-2">
                         <div class="bg-color-primary text-color-white md-square-icon-bg d-flex align-items-center justify-content-center"><i class="uil uil-setting md-icon-size"></i></div>
                     </div>
@@ -147,7 +81,7 @@ $page_title = 'More';
 </div>
 <div class="row ms-xxl-2 mt-3 pb-5">
     <span class="col d-block align-items-center text-color-secondary">
-        <h6>Version: 0.0.1 [Dev]</h6>
+        <h6 class="text-center text-xl-start">Version: 0.0.1 [Dev]</h6>
     </span>
 </div>
 

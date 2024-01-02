@@ -1,5 +1,5 @@
 <!-- Top Navbar -->
-<nav id="top_bar" class="navbar fixed-top top_bar d-flex justify-item-center">
+<nav id="top_bar" class="navbar fixed-top top_bar d-flex justify-item-center top_over">
     <ul class="navbar-nav nav-justified w-100 list-group list-group-horizontal">
         <li class="nav-item">
             <a id="nav_title" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y d-none" href="#">
@@ -39,7 +39,7 @@
 
 
 <!-- Mobile Tabbar -->
-<nav id="tab_bar" class="navbar fixed-bottom tab_bar">
+<nav id="tab_bar" class="navbar fixed-bottom tab_bar top_over">
     <ul class="navbar-nav d-flex nav-justified w-100 list-group list-group-horizontal align-items-center">
         <li class="nav-item">
             <a href="../views/index.php" class="nav-link d-flex align-items-center justify-content-center">
@@ -64,7 +64,17 @@
 
                 <div id="tab_add">
 
-                    <div class="rounded-circle p-3 border-2 border border-1 bg-color-primary"><i class="uil uil-book-medical fs-1 text-color-white"></i></div>
+                    <div class="rounded-circle p-3 border-2 border border-3 bg-color-primary">
+
+
+
+                        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com/jgnvfzqg.json" trigger="loop" delay="2000" colors="primary:#ffffff" style="width: 2em;height: 2em;">
+                        </lord-icon>
+
+
+
+                    </div>
 
 
                 </div>
@@ -100,7 +110,7 @@
 
 
 
-<div id="side_bar_small" style="width: 5vw; padding: 0;" class="position-fixed h-100 col d-none">
+<div id="side_bar_small" style="width: 5vw; padding: 0;" class="position-fixed h-100 col d-none top_over">
     <div class="col">
         <!-- small sidebar -->
         <div class="d-flex flex-column flex-shrink-0 bg-light h-100 shadow" style="width: 4.5rem;">
@@ -159,7 +169,7 @@
 
 
 
-<div class="position-fixed h-100 col">
+<div class="position-fixed h-100 col top_over">
     <div id="side_bar" style="width: 13vw; padding: 0;" class="col">
         <!-- SideBar -->
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100 shadow">

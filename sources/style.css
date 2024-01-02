@@ -198,18 +198,16 @@ i {
 .tabbar_mobile svg {
   color: var(--white) !important;
 }
+
 /*loading screen*/
 .loader {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background: url("#") 50% 50% no-repeat rgb(249, 249, 249);
-  opacity: 0.8;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 100;
+  background: url("#") 100% 100% no-repeat rgb(249, 249, 249);
 }
-.loader l-hourglass {
-  margin-left: auto;
-  margin-right: auto;
+.top_over {
+  z-index: 101;
 }
 
 /* -------------------------------------------------- */
