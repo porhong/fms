@@ -51,12 +51,14 @@ if (!isset($_SESSION['Auth'])) {
     </script>
     <!-- Lordicon -->
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <script src="../sources/function/soon.js"></script>
+    <!-- Switch -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
 
 <body>
-    <div class="loader position-relative">
+    <div class="loader position-absolute">
         <div class="d-flex position-absolute top-50 start-50 translate-middle">
-            <img style="width: 4em;" src="../sources/img/loading.gif" alt="">
+            <lord-icon src="https://cdn.lordicon.com/pxwxddbb.json" trigger="loop" state="loop-rotation" colors="primary:#3f59a8" style="width:5em;height:5em;">
+            </lord-icon>
         </div>
     </div>
     <?php require("../templates/components/sidebar.php"); ?>

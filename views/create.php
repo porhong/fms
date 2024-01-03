@@ -3,12 +3,16 @@
 <?php $link_js = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
-<div class="d-flex justify-content-center justifu align-items-center row mt-5 pt-5">
-    <lord-icon src="https://cdn.lordicon.com/jdalicnn.json" trigger="loop" delay="3000" colors="primary:#121331,secondary:#3e58a7" style="width:250px;height:250px"></lord-icon>
-    <h2 class="text-center text-color-primary fw-bold pt-5">
-        This page is under construction.
-    </h2>
-</div>;
+<div class="container">
+    <form action="">
+
+        <div class="row border border-2 border-primary rounded rounded-4 fw-bold">
+            <div id="income" class="col-6 d-flex justify-content-center pt-2 pb-2"><span class="income bg-color-primary text-color-white w-100 text-center p-2 rounded-3">Income</span></div>
+            <div id="expend" class="col-6 d-flex justify-content-center pt-2 pb-2"><span class="expend text-color-primary w-100 text-center p-2 rounded-3">Expend</span></div>
+        </div>
+
+    </form>
+</div>
 <?php $content = ob_get_clean(); ?>
 
 <?php

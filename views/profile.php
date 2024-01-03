@@ -5,22 +5,22 @@
 <?php ob_start();
 session_start();
 include '../sources/function/config.php';
-$role_id = $_SESSION['role'];
-$sql = "SELECT * FROM tbl_roles WHERE id = $role_id";
+$user_id = $_SESSION['userID'];
+$sql = "SELECT first_name,last_name,email,tbl_roles.name AS 'role_name' FROM `tbl_user` INNER JOIN `tbl_roles` ON tbl_user.role = tbl_roles.id WHERE tbl_user.id=$user_id;";
 $result = $conn->query($sql);
-$userRole = $result->fetch_assoc();
+$userData = $result->fetch_assoc();
 ?>
 <section>
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-4">
-                <div class="card input-shadow mb-4">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="card input-shadow mb-4 h-100">
                     <div class="card-body text-center">
                         <lord-icon class="rounded-circle img-fluid" src="https://cdn.lordicon.com/zfmcashd.json" trigger="loop" delay="2000" style="width: 250em;height: 250px;">
                         </lord-icon>
-                        <h5 class="my-2 fw-bold text-color-primary"><?php echo $_SESSION['firstName'] . " " . $_SESSION['lastName'] ?></h5>
-                        <p class="mb-2 fw-medium"><?php echo $userRole['name'] ?></p>
+                        <h5 class="my-2 fw-bold text-color-primary"><?php echo $userData['first_name'] . " " . $userData['last_name'] ?></h5>
+                        <p class="mb-2 fw-medium"><?php echo $userData['role_name'] ?></p>
                         <div class="d-flex justify-content-center mb-2">
                             <button type="button" class="btn btn-primary">Edit Profile</button>
                         </div>
@@ -35,7 +35,7 @@ $userRole = $result->fetch_assoc();
                                 <p class="mb-0">Email</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0"><?php echo $_SESSION['userEmail'] ?></p>
+                                <p class="text-muted mb-0"><?php echo $userData['email'] ?></p>
                             </div>
                         </div>
                         <hr>

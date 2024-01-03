@@ -16,7 +16,10 @@
         <li class="nav-item">
             <div id="nav_profile" style="padding-right: 6rem;" class="dropdown position-absolute top-50 start-100 translate-middle d-none">
                 <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="42" height="42" class="rounded-circle">
+                    <div class="border border-primary border-2 p-1 rounded-circle">
+                        <lord-icon src="https://cdn.lordicon.com/zfmcashd.json" trigger="hover" style="width:2em;height:2em">
+                        </lord-icon>
+                    </div>
                 </a>
                 <ul style="margin-top: 3.5rem; margin-right: 5.5rem;" class="dropdown-menu text-small shadow">
                     <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -65,15 +68,8 @@
                 <div id="tab_add">
 
                     <div class="rounded-circle p-3 border-2 border border-3 bg-color-primary">
-
-
-
-                        <script src="https://cdn.lordicon.com/lordicon.js"></script>
                         <lord-icon src="https://cdn.lordicon.com/jgnvfzqg.json" trigger="loop" delay="2000" colors="primary:#ffffff" style="width: 2em;height: 2em;">
                         </lord-icon>
-
-
-
                     </div>
 
 
@@ -141,7 +137,10 @@
             <hr>
             <div class="dropdown d-flex justify-content-center align-content-center pb-3">
                 <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <div class="border border-primary border-2 p-1 rounded-circle">
+                        <lord-icon src="https://cdn.lordicon.com/zfmcashd.json" trigger="hover" style="width:2em;height:2em">
+                        </lord-icon>
+                    </div>
                     <strong id="profile_use_name"><?php echo $_SESSION["lastName"]  ?></strong>
                 </a>
                 <ul class="dropdown-menu text-small shadow">
@@ -204,7 +203,10 @@
             <hr>
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <div class="border border-primary border-2 p-1 rounded-circle me-2">
+                        <lord-icon src="https://cdn.lordicon.com/zfmcashd.json" trigger="hover" style="width:2em;height:2em">
+                        </lord-icon>
+                    </div>
                     <strong><?php echo $_SESSION["lastName"]  ?></strong>
                 </a>
                 <ul class="dropdown-menu text-small shadow">

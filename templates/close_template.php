@@ -105,7 +105,7 @@
     });
 
     $(window).ready(function() {
-        $(".top_over").fadeIn("slow");
+        $("body").fadeIn("slow");
     });
     //Lazy loading Images
     $('img').attr('loading', 'lazy');
@@ -114,7 +114,7 @@
         window.history.back();
     });
 </script>
-
+<script src="../controlers/JS/create_JS_Controler.js"></script>
 </body>
 
 </html>
