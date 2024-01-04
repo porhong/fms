@@ -96,6 +96,13 @@ i {
   background: var(--primary);
   border-radius: 5px;
 }
+/* hide spiner on number Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* -------------------------------------------------- */
 /* Apply Style */
 .box-area {
@@ -206,6 +213,14 @@ i {
   z-index: 100;
   background: url("#") 100% 100% no-repeat rgb(249, 249, 249);
 }
+.input-number-lg {
+  height: 7rem !important;
+}
+.gj-datepicker button {
+  width: 25% !important;
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
 
 /* ------------------------------------------------------------------------------------------------ */
 .top_over {
@@ -262,6 +277,19 @@ i {
 .border.border-primary {
   border-color: var(--primary) !important;
 }
+.input-number-lg:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+option {
+  padding: 0 10rem !important;
+}
+option:hover {
+  background-color: var(--white) !important;
+  color: var(--primary) !important;
+}
+
 /* -------------------------------------------------- */
 /* for Small screen */
 @media only screen and (max-width: 900px) {

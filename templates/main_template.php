@@ -51,8 +51,10 @@ if (!isset($_SESSION['Auth'])) {
     </script>
     <!-- Lordicon -->
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <!-- Switch -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
+    <!-- GIJGO -->
+    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 
 <body>
     <div class="loader position-absolute">

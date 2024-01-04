@@ -236,7 +236,35 @@ function modal_update_user($modal_id_get, $modal_title_get, $modal_content_get, 
 
     return ob_get_clean();
 }
-
-
-
 ?>
+
+
+
+<?php
+function modal_choose_currncy($modal_id_get, $modal_title_get, $modal_content_get, $modal_button_title_get)
+{
+    ob_start();
+?>
+    <div class="modal fade" id="<?php echo $modal_id_get ?>">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-money-bill fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h4>
+                </div>
+
+                <div id="modal_body" class="modal-body">
+                    <div class="row d-flex justify-content-evenly">
+                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary reil" data-bs-dismiss="modal"><span>REIL</span></div>
+                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary usd" data-bs-dismiss="modal"><span>USD</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<?php
+
+    return ob_get_clean();
+}

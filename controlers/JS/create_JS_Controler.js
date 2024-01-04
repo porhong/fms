@@ -10,3 +10,17 @@ $("#income").click(function () {
   $(".expend").addClass("text-color-primary");
   $(".expend").removeClass("bg-color-primary text-color-white");
 });
+
+$(".usd").click(function () {
+  $(".symbol span").text("$");
+  $("#btn_currency span").text("USD");
+});
+$(".reil").click(function () {
+  $(".symbol span").text("៛");
+  $("#btn_currency span").text("REIL");
+});
+
+//date picker
+$("#datepicker").datepicker({
+  uiLibrary: "bootstrap5",
+});
