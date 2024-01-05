@@ -8,7 +8,7 @@ function modal_confirm_delete($modal_id_get, $modal_title_get, $modal_content_ge
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-trash-alt fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h4>
+                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-trash-alt fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
                 </div>
 
                 <div id="modal_body" class="modal-body">
@@ -44,7 +44,7 @@ function modal_add_user($modal_id_get, $modal_title_get, $modal_content_get, $mo
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-user-plus fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h4>
+                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-user-plus fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
                 </div>
 
                 <div id="modal_body" class="modal-body">
@@ -149,7 +149,7 @@ function modal_update_user($modal_id_get, $modal_title_get, $modal_content_get, 
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-edit fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h4>
+                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-edit fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
                 </div>
 
                 <div id="modal_body" class="modal-body">
@@ -250,7 +250,7 @@ function modal_choose_currncy($modal_id_get, $modal_title_get, $modal_content_ge
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-money-bill fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h4>
+                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-money-bill fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
                 </div>
 
                 <div id="modal_body" class="modal-body">
@@ -268,3 +268,80 @@ function modal_choose_currncy($modal_id_get, $modal_title_get, $modal_content_ge
 
     return ob_get_clean();
 }
+?>
+
+<?php
+function modal_choose_date($modal_id_get, $modal_title_get, $modal_content_get, $modal_button_title_get)
+{
+    ob_start();
+?>
+
+    <!-- Date picker -->
+    <script src="../sources/calendar-17/js/rome.js"></script>
+    <script src="../sources/calendar-17/js/main.js"></script>
+    <div class="modal fade" id="<?php echo $modal_id_get ?>">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-calendar-alt fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
+                </div>
+
+                <div id="modal_body" class="modal-body">
+
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 text-center">
+                            <input type="text" class="w-100 p-2 text-color-primary rounded-3 result_selected_date border-0 fw-bold" id="result" placeholder="Select date" readonly>
+                            <form action="#" class="row">
+                                <div class="col-md-12">
+                                    <div class="shadow-none" id="inline_cal"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a class="btn_update"><button id="btn_select_date" value="btn_select_date" name="btn_select_date" type="submit" class="btn btn-primary" data-bs-dismiss="modal"><?php echo $modal_button_title_get ?></button></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<?php
+
+    return ob_get_clean();
+}
+?>
+
+<?php
+function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, $modal_button_title_get)
+{
+    ob_start();
+?>
+    <div class="modal fade" id="<?php echo $modal_id_get ?>">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-list-ol fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
+                </div>
+
+                <div id="modal_body" class="modal-body">
+                    <div class="row d-flex justify-content-evenly">
+                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary reil" data-bs-dismiss="modal"><span>REIL</span></div>
+                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary usd" data-bs-dismiss="modal"><span>USD</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<?php
+
+    return ob_get_clean();
+}
+?>

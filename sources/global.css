@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Nokora:wght@100;300;400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Variable */
+:root {
+  --primary: #3e58a7;
+  --secondary: #467cbf;
+  --white: #ffffff;
+  --success: #6eac90;
+  --danger: #dc3545;
+  --warning: #f9bc03;
+  --bg: #ffffff;
+  --boarder: rgba(128, 128, 128, 0.3);
+}
+/* Global */
+body {
+  font-family: "Nokora", sans-serif !important;
+  background: var(--bg) !important;
+  margin-bottom: 4rem !important;
+}
+.link_color {
+  color: var(--primary) !important;
+  text-decoration: none !important;
+}
+i {
+  box-sizing: border-box !important;
+}
+.hover:hover {
+  background-color: var(--secondary) !important;
+  color: var(--white) !important;
+}
+
+/* Scroll bar stylings */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--boarder);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+/* hide spiner on number Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  background-color: transparent !important;
+}
+
+/* Placeholder alignment */
+textarea::-webkit-input-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translate(-50%, -50%);
+  color: var(--primary) !important;
+  opacity: 80% !important;
+}
+textarea {
+  padding-top: 2.5rem !important;
+}
+/* -------------------------------------------------- */

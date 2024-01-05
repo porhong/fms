@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Nokora:wght@100;300;400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Variable */
+:root {
+  --primary: #3e58a7;
+  --secondary: #467cbf;
+  --white: #ffffff;
+  --success: #6eac90;
+  --danger: #dc3545;
+  --warning: #f9bc03;
+  --bg: #ffffff;
+  --boarder: rgba(128, 128, 128, 0.3);
+}
+/* Custom Bootstrap 5 */
+.btn-primary {
+  background-color: var(--primary) !important;
+  padding: 0.5rem !important;
+  font-weight: 500 !important;
+}
+.btn-secondary {
+  background-color: var(--danger) !important;
+  border: none !important;
+  padding: 0.5rem !important;
+  font-weight: 500 !important;
+}
+.btn-danger {
+  padding: 0.5rem !important;
+}
+.form-label {
+  background-color: var(--danger) !important;
+}
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.menu-title-fs {
+  font-size: 1.1rem !important;
+}
+.menu-sub-title-fs {
+  font-size: 0.8rem !important;
+}

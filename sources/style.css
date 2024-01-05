@@ -10,100 +10,9 @@
   --warning: #f9bc03;
   --bg: #ffffff;
   --boarder: rgba(128, 128, 128, 0.3);
+  --light_brown: #dee2e6;
 }
 
-/* Properties */
-.text-color-danger {
-  color: var(--danger) !important;
-  text-decoration: none !important;
-}
-.text-color-primary {
-  color: var(--primary) !important;
-  text-decoration: none !important;
-}
-.text-color-warning {
-  color: var(--warning) !important;
-  text-decoration: none !important;
-}
-.text-color-success {
-  color: var(--success) !important;
-  text-decoration: none !important;
-}
-.text-color-error {
-  color: var(--danger) !important;
-  text-decoration: none !important;
-}
-.text-color-white {
-  color: var(--white) !important;
-  text-decoration: none !important;
-}
-.text-color-secondary {
-  color: var(--secondary) !important;
-  text-decoration: none !important;
-}
-.input-shadow {
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05) !important;
-}
-.bg-color-primary {
-  background-color: var(--primary) !important;
-}
-.bg-color-danger {
-  background-color: var(--danger) !important;
-}
-.lg-icon-size {
-  font-size: 2.5rem !important;
-}
-.md-icon-size {
-  font-size: 1.5rem !important;
-}
-.md-square-icon-bg {
-  width: 2.5rem !important;
-  height: 2.5rem !important;
-  border-radius: 0.5rem !important;
-}
-/* Global */
-body {
-  font-family: "Nokora", sans-serif !important;
-  background: var(--bg) !important;
-  margin-bottom: 4rem !important;
-}
-.link_color {
-  color: var(--primary) !important;
-  text-decoration: none !important;
-}
-i {
-  box-sizing: border-box !important;
-}
-.hover:hover {
-  background-color: var(--secondary) !important;
-  color: var(--white) !important;
-}
-
-/* Scroll bar stylings */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: var(--boarder);
-  border-radius: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 5px;
-}
-/* hide spiner on number Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* -------------------------------------------------- */
 /* Apply Style */
 .box-area {
   width: 930px;
@@ -206,6 +115,9 @@ input::-webkit-inner-spin-button {
   color: var(--white) !important;
 }
 
+.top_over {
+  z-index: 101;
+}
 /*loading screen*/
 .loader {
   width: 100% !important;
@@ -213,49 +125,59 @@ input::-webkit-inner-spin-button {
   z-index: 100;
   background: url("#") 100% 100% no-repeat rgb(249, 249, 249);
 }
+
+/* input-number-size */
+.input-number-xl {
+  height: 9rem !important;
+}
+.input-number-xl:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
 .input-number-lg {
   height: 7rem !important;
 }
-.gj-datepicker button {
-  width: 25% !important;
-  background-color: var(--primary) !important;
-  color: var(--white) !important;
+.input-number-lg:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
 }
-
-/* ------------------------------------------------------------------------------------------------ */
-.top_over {
-  z-index: 101;
+.input-number-md {
+  height: 4rem !important;
 }
-
-/* -------------------------------------------------- */
-/* Custom Bootstrap 5 */
-.btn-primary {
-  background-color: var(--primary) !important;
-  padding: 0.5rem !important;
-  font-weight: 500 !important;
+.input-number-md:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
 }
-.btn-secondary {
-  background-color: var(--danger) !important;
+.symbol {
+  margin-left: 3rem !important;
   border: none !important;
-  padding: 0.5rem !important;
-  font-weight: 500 !important;
 }
-.btn-danger {
-  padding: 0.5rem !important;
+.txt_amount {
+  padding-left: 5rem !important;
 }
-.form-label {
-  background-color: var(--danger) !important;
+.txt_amount:focus {
+  z-index: 0 !important;
 }
-.text-primary {
-  color: var(--primary) !important;
+.txt_date:focus {
+  border-color: var(--light_brown) !important;
+  border-left: none !important;
+}
+.txt_type:focus {
+  border-color: var(--light_brown) !important;
+  border-left: none !important;
+}
+.txt_note:focus {
+  border-color: var(--light_brown) !important;
+  border-left: none !important;
+}
+.buttom-margin {
+  margin-bottom: 6rem !important;
 }
 
-.menu-title-fs {
-  font-size: 1.1rem !important;
-}
-.menu-sub-title-fs {
-  font-size: 0.8rem !important;
-}
 /* custom toggle switch */
 
 .form-switch.form-switch-lg {
@@ -276,18 +198,6 @@ input::-webkit-inner-spin-button {
 }
 .border.border-primary {
   border-color: var(--primary) !important;
-}
-.input-number-lg:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
-}
-option {
-  padding: 0 10rem !important;
-}
-option:hover {
-  background-color: var(--white) !important;
-  color: var(--primary) !important;
 }
 
 /* -------------------------------------------------- */
@@ -318,6 +228,13 @@ option:hover {
   }
   .d-non-mobile {
     display: none !important;
+  }
+  .symbol {
+    margin-left: 2rem !important;
+    border: none !important;
+  }
+  .txt_amount {
+    padding-left: 3.5rem !important;
   }
 }
 /* -------------------------------------------------- */

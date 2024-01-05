@@ -23,6 +23,9 @@ if (!isset($_SESSION['Auth'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel=" stylesheet" href="../sources/style.css" />
+    <link rel=" stylesheet" href="../sources/properties.css" />
+    <link rel=" stylesheet" href="../sources/global.css" />
+    <link rel=" stylesheet" href="../sources/custom_bootstrap.css" />
     <!-- Link Bootstrap5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -51,9 +54,10 @@ if (!isset($_SESSION['Auth'])) {
     </script>
     <!-- Lordicon -->
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <!-- GIJGO -->
-    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
 
 
 <body>

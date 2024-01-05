@@ -13,14 +13,41 @@ $("#income").click(function () {
 
 $(".usd").click(function () {
   $(".symbol span").text("$");
-  $("#btn_currency span").text("USD");
 });
 $(".reil").click(function () {
   $(".symbol span").text("៛");
-  $("#btn_currency span").text("REIL");
 });
 
-//date picker
-$("#datepicker").datepicker({
-  uiLibrary: "bootstrap5",
+//select date
+$("#btn_select_date").click(function () {
+  var selected_date = $(".result_selected_date").val();
+  $("#tran_date").val(selected_date);
 });
+//select date on load
+function GetTodayDate() {
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  var tdate = new Date();
+  var dd = tdate.getDate(); //yields day
+  var MM = tdate.getMonth(); //yields month
+  MM = monthNames[MM];
+  var yyyy = tdate.getFullYear(); //yields year
+  var currentDate = MM + "-" + dd + "-" + yyyy;
+
+  return currentDate;
+}
+var curentDate = GetTodayDate();
+$("#tran_date").val(curentDate);
+$(".result_selected_date").val(curentDate);

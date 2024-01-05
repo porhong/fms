@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Nokora:wght@100;300;400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Variable */
+:root {
+  --primary: #3e58a7;
+  --secondary: #467cbf;
+  --white: #ffffff;
+  --success: #6eac90;
+  --danger: #dc3545;
+  --warning: #f9bc03;
+  --bg: #ffffff;
+  --boarder: rgba(128, 128, 128, 0.3);
+}
+/* Properties */
+.text-color-danger {
+  color: var(--danger) !important;
+  text-decoration: none !important;
+}
+.text-color-primary {
+  color: var(--primary) !important;
+  text-decoration: none !important;
+}
+.text-color-warning {
+  color: var(--warning) !important;
+  text-decoration: none !important;
+}
+.text-color-success {
+  color: var(--success) !important;
+  text-decoration: none !important;
+}
+.text-color-error {
+  color: var(--danger) !important;
+  text-decoration: none !important;
+}
+.text-color-white {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+.text-color-secondary {
+  color: var(--secondary) !important;
+  text-decoration: none !important;
+}
+.input-shadow {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 1rem !important;
+}
+.bg-color-primary {
+  background-color: var(--primary) !important;
+}
+.bg-color-danger {
+  background-color: var(--danger) !important;
+}
+.bg-color-white {
+  background-color: var(--white) !important;
+}
+.lg-icon-size {
+  font-size: 2.5rem !important;
+}
+.md-icon-size {
+  font-size: 1.5rem !important;
+}
+.md-square-icon-bg {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  border-radius: 0.5rem !important;
+}
