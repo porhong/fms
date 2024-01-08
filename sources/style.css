@@ -178,26 +178,10 @@
   margin-bottom: 6rem !important;
 }
 
-/* custom toggle switch */
-
-.form-switch.form-switch-lg {
-  height: 1.3rem;
-}
-
-.form-switch.form-switch-lg .form-check-input {
-  height: 1.4rem;
-  width: 2.8rem;
-  margin-right: 1rem;
-}
-.form-floating .form-control {
-  background-color: var(--white) !important;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
-}
-.form-floating .form-lable::after {
-  background-color: transparent !important;
-}
-.border.border-primary {
-  border-color: var(--primary) !important;
+.item-card-md {
+  width: 10rem !important;
+  height: 10rem !important;
+  border-radius: 0.8rem !important;
 }
 
 /* -------------------------------------------------- */

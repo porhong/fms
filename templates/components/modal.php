@@ -255,7 +255,7 @@ function modal_choose_currncy($modal_id_get, $modal_title_get, $modal_content_ge
 
                 <div id="modal_body" class="modal-body">
                     <div class="row d-flex justify-content-evenly">
-                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary reil" data-bs-dismiss="modal"><span>REIL</span></div>
+                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary reil" data-bs-dismiss="modal"><img src="" alt=""></div>
                         <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary usd" data-bs-dismiss="modal"><span>USD</span></div>
                     </div>
                 </div>
@@ -331,8 +331,8 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
 
                 <div id="modal_body" class="modal-body">
                     <div class="row d-flex justify-content-evenly">
-                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary reil" data-bs-dismiss="modal"><span>REIL</span></div>
-                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary usd" data-bs-dismiss="modal"><span>USD</span></div>
+                        <div class="col-5 card text-center p-2 text-color-white bg-color-primary item-card-md " data-bs-dismiss="modal"><span>REIL</span></div>
+                        <div class="col-5 card text-center p-2 text-color-white bg-color-primary item-card-md " data-bs-dismiss="modal"><span>USD</span></div>
                     </div>
                 </div>
 
