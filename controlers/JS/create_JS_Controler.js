@@ -25,29 +25,20 @@ $("#btn_select_date").click(function () {
 });
 //select date on load
 function GetTodayDate() {
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
   var tdate = new Date();
   var dd = tdate.getDate(); //yields day
-  var MM = tdate.getMonth(); //yields month
-  MM = monthNames[MM];
+  var MM = tdate.getMonth() + 1; //yields month
+  MM = String(MM).padStart(2, "0");
+  dd = String(dd).padStart(2, "0");
   var yyyy = tdate.getFullYear(); //yields year
-  var currentDate = MM + "-" + dd + "-" + yyyy;
+  var currentDate = yyyy + "-" + MM + "-" + dd;
 
   return currentDate;
 }
 var curentDate = GetTodayDate();
 $("#tran_date").val(curentDate);
 $(".result_selected_date").val(curentDate);
+
+$("#btn_new_type").click(function () {
+  $("#txt_new_type").toggleClass("d-none");
+});

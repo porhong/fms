@@ -169,7 +169,7 @@
 
 
 <div class="position-fixed h-100 col top_over">
-    <div id="side_bar" style="width: 13vw; padding: 0;" class="col">
+    <div id="side_bar" style="width: 13vw; padding: 0;" class="col d-none">
         <!-- SideBar -->
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary h-100 shadow">
             <div style="padding-top: 4.5rem;" class="align-self-center">

@@ -39,3 +39,6 @@
 .menu-sub-title-fs {
   font-size: 0.8rem !important;
 }
+.border.border-primary {
+  border-color: var(--primary) !important;
+}

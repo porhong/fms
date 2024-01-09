@@ -37,7 +37,7 @@ if (isset($_SESSION['Auth'])) {
     <!-- Link JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- sweet alert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>;
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- PWA -->
     <link rel="manifest" crossorigin="use-credentials" href="../manifest.json">
     <script>
