@@ -115,7 +115,10 @@
     });
 </script>
 <script src="../controlers/JS/create_JS_Controler.js"></script>
-
+<!-- Jquery-UI -->
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Number seperater -->
+<script src="../sources/function/number-separator.js"></script>
 </body>
 
 </html>

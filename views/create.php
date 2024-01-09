@@ -11,8 +11,9 @@ include("../templates/components/modal.php") ?>
     <form action="">
 
         <div class="row border border-2 border-primary rounded rounded-4 fw-bold">
-            <div id="income" class="col-6 d-flex justify-content-center pt-2 pb-2 "><span class="income bg-color-primary text-color-white w-100 text-center p-2 rounded-3">Income</span></div>
-            <div id="expend" class="col-6 d-flex justify-content-center pt-2 pb-2 "><span class="expend text-color-primary w-100 text-center p-2 rounded-3">Expend</span></div>
+            <div id="expend" class="col-6 d-flex justify-content-center pt-2 pb-2 "><span class="expend bg-color-primary text-color-white w-100 text-center p-2 rounded-3">Expend</span></div>
+            <div id="income" class="col-6 d-flex justify-content-center pt-2 pb-2 "><span class="income text-color-primary w-100 text-center p-2 rounded-3">Income</span></div>
+
         </div>
 
         <div class="input-group mb-3 mt-4 position-relative input-shadow">
@@ -26,15 +27,15 @@ include("../templates/components/modal.php") ?>
 
                 <div data-bs-toggle="modal" data-bs-target="#choose_date" class="input-group input-shadow">
                     <span class="input-group-text bg-color-white rounded-start-4"><i class="uil uil-calendar-alt fs-4 fw-bolder text-color-primary"></i></span>
-                    <input id="tran_date" readonly type="text" class="txt_date form-control input-number-md rounded-end-4 border-start-0 text-color-primary fw-medium" placeholder="Date" aria-label="Username" aria-describedby="basic-addon1">
+                    <input id="tran_date" readonly type="text" class="txt_date form-control input-number-md rounded-end-4 border-start-0 text-color-primary fw-bold" placeholder="Date" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
             </div>
             <div class="col-12 col col-lg-6 pb-3">
 
-                <div data-bs-toggle="modal" data-bs-target="#choose_type" class="input-group input-shadow">
+                <div data-bs-toggle="modal" data-bs-target="#choose_type" class="input-group input-shadow choose_type">
                     <span class="input-group-text bg-color-white rounded-start-4"><i class="uil uil-list-ol fs-4 fw-bolder text-color-primary"></i></span>
-                    <input readonly type="text" class="txt_type form-control input-number-md rounded-end-4 border-start-0 text-color-primary fw-medium" placeholder="Type" aria-label="Username" aria-describedby="basic-addon1">
+                    <input readonly type="text" class="txt_type form-control input-number-md rounded-end-4 border-start-0 text-color-primary fw-bold" placeholder="Type" aria-label="Username" aria-describedby="basic-addon1" value="Cash">
                 </div>
             </div>
             <div class="col-12 pb-5">
@@ -43,7 +44,7 @@ include("../templates/components/modal.php") ?>
                     <textarea class="txt_note form-control rounded-end-4 border-start-0 input-number-lg text-color-primary fw-medium" placeholder="Note" aria-label="Username" aria-describedby="basic-addon1"></textarea>
                 </div>
             </div>
-            <div class="col-12 d-flex justify-content-center align-items-center mb-5 input-shadow"><button type="button" class="btn btn-primary w-100 p-3 fw-bold rounded-3">Create Record</button></div>
+            <div id="btn_create_tran_record" class="col-12 d-flex justify-content-center align-items-center mb-5"><button type="button" class="btn btn-primary w-100 p-3 fw-bold rounded-3 input-shadow">Create Record</button></div>
         </div>
 
     </form>

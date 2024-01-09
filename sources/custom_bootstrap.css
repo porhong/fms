@@ -12,19 +12,21 @@
   --boarder: rgba(128, 128, 128, 0.3);
 }
 /* Custom Bootstrap 5 */
-.btn-primary {
+.btn.btn-primary {
   background-color: var(--primary) !important;
-  padding: 0.5rem !important;
+  padding: 0.8rem !important;
   font-weight: 500 !important;
 }
-.btn-secondary {
+.btn.btn-secondary {
   background-color: var(--danger) !important;
   border: none !important;
   padding: 0.5rem !important;
   font-weight: 500 !important;
 }
-.btn-danger {
-  padding: 0.5rem !important;
+.btn.btn-danger {
+  padding: 0.8rem !important;
+  font-weight: 500 !important;
+  background-color: var(--danger) !important;
 }
 .form-label {
   background-color: var(--danger) !important;
@@ -41,4 +43,8 @@
 }
 .border.border-primary {
   border-color: var(--primary) !important;
+}
+.btn:focus {
+  border: none !important;
+  border-color: var(--white) !important;
 }

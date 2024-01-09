@@ -118,7 +118,7 @@ function modal_add_user($modal_id_get, $modal_title_get, $modal_content_get, $mo
 
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                     <a class="btn_delete"><button id="btn_submit" value="create_user" name="create_user" type="submit" class="btn btn-primary" disabled><?php echo $modal_button_title_get ?></button></a>
 
                 </div>
@@ -222,7 +222,7 @@ function modal_update_user($modal_id_get, $modal_title_get, $modal_content_get, 
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                     <a class="btn_update"><button id="btn_update_user" value="btn_update_user" name="btn_update_user" type="submit" class="btn btn-primary"><?php echo $modal_button_title_get ?></button></a>
 
                 </div>
@@ -255,18 +255,18 @@ function modal_choose_currncy($modal_id_get, $modal_title_get, $modal_content_ge
 
                 <div id="modal_body" class="modal-body">
                     <div class="row d-flex justify-content-evenly">
-                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary item-card-md reil position-relative" data-bs-dismiss="modal">
-                            <span style="font-size: 4.4rem;" class="fw-bold position-absolute top-50 start-50 translate-middle">៛</span>
-                            <span style="margin-top: -1rem;" class="position-absolute top-100 start-50 translate-middle">REIL</span>
-                        </div>
                         <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary item-card-md usd" data-bs-dismiss="modal">
                             <span style="font-size: 3.5rem;" class="fw-bold position-absolute top-50 start-50 translate-middle">$</span>
                             <span style="margin-top: -1rem;" class="position-absolute top-100 start-50 translate-middle">USD</span>
                         </div>
+                        <div class="btn col-5 card text-center p-2 text-color-primary border border-primary border-2 item-card-md reil position-relative" data-bs-dismiss="modal">
+                            <span style="font-size: 4.4rem;" class="fw-bold position-absolute top-50 start-50 translate-middle">៛</span>
+                            <span style="margin-top: -1rem;" class="position-absolute top-100 start-50 translate-middle">REIL</span>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -310,7 +310,7 @@ function modal_choose_date($modal_id_get, $modal_title_get, $modal_content_get, 
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                     <a class="btn_update"><button id="btn_select_date" value="btn_select_date" name="btn_select_date" type="submit" class="btn btn-primary" data-bs-dismiss="modal"><?php echo $modal_button_title_get ?></button></a>
                 </div>
 
@@ -335,6 +335,9 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
 
                 <div class="modal-header">
                     <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-list-ol fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
+                    <div id="btn_new_type" class="text-center d-flex justify-align-content-center align-items-center">
+                        <p class="text-color-primary fw-bold btn m-0"><i class="uil uil-plus me-1 fs-4"></i>New</p>
+                    </div>
                 </div>
 
                 <div id="modal_body" class="modal-body">
@@ -349,22 +352,21 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
                         if ($result->num_rows > 0) {
                             while ($type = $result->fetch_assoc()) {
                         ?>
-                                <div class="col-4 text-center mb-3 d-flex justify-content-center align-items-center">
-                                    <p class="p-3 text-color-primary btn border border-primary w-100 h1" data-bs-dismiss="modal"><?php echo $type["name"] ?></p>
+                                <div class="col-4 text-center mb-3 d-flex justify-content-center align-items-center btn_tran_type">
+                                    <p id="<?php echo $type["name"] ?>" class="p-3 text-color-primary btn border border-primary w-100 h1 border-2 fw-bold " data-bs-dismiss="modal"><?php echo $type["name"] ?></p>
                                 </div>
                         <?php }
                         } ?>
-                        <div id="btn_new_type" class="col-4 mb-3 text-center d-flex justify-align-content-center align-items-center">
-                            <p class="p-3 text-color-primary btn border border-primary w-100 h1"><i class="uil uil-plus me-1 fs-4"></i>New</p>
+                        <!-- input create -->
+                        <div id="txt_new_type" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow d-none">
+                            <input type="text" class="form-control rounded-start-2 text-color-primary fw-medium input-number-sm">
+                            <button class="btn btn-primary rounded-end-2 w-25 input-number-sm">Create</button>
                         </div>
-                        <div id="txt_new_type" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center d-none">
-                            <input type="text" class="form-control input-number-md rounded-start-4 text-color-primary fw-medium">
-                            <button class="btn btn-primary h-100 rounded-end-4 w-25">Create</button>
-                        </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

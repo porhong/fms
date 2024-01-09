@@ -4,11 +4,11 @@
     <style>
       .cls-1 {
         font-family: Nokora-Bold, 'Nokora Regular';
-        font-size: 982.01px;
+        font-size: 709.39px;
         font-weight: 700;
         fill: #ffffff;
       }
     </style>
   </defs>
-  <text class="cls-1" transform="translate(358.76 794.4)"><tspan x="0" y="0">៛</tspan></text>
+  <text class="cls-1" transform="translate(295.01 758.9) scale(1.02 1)"><tspan x="0" y="0">$</tspan></text>
 </svg>

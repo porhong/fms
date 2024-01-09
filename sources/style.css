@@ -152,6 +152,14 @@
   box-shadow: none !important;
   background-color: transparent !important;
 }
+.input-number-sm {
+  height: 3rem !important;
+}
+.input-number-sm:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
 .symbol {
   margin-left: 3rem !important;
   border: none !important;

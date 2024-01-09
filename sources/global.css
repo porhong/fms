@@ -16,6 +16,9 @@ body {
   font-family: "Nokora", sans-serif !important;
   background: var(--bg) !important;
   margin-bottom: 4rem !important;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 .link_color {
   color: var(--primary) !important;
