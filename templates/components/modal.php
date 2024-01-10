@@ -255,13 +255,13 @@ function modal_choose_currncy($modal_id_get, $modal_title_get, $modal_content_ge
 
                 <div id="modal_body" class="modal-body">
                     <div class="row d-flex justify-content-evenly">
-                        <div class="btn col-5 card text-center p-2 text-color-white bg-color-primary item-card-md usd" data-bs-dismiss="modal">
-                            <span style="font-size: 3.5rem;" class="fw-bold position-absolute top-50 start-50 translate-middle">$</span>
-                            <span style="margin-top: -1rem;" class="position-absolute top-100 start-50 translate-middle">USD</span>
+                        <div class="btn col-5 card text-center p-2 bg-color-primary item-card-md usd mb-3 " data-bs-dismiss="modal">
+                            <span style="font-size: 2.5rem;" class="fw-bold position-absolute top-50 start-50 translate-middle text-color-white $">$</span>
+                            <div style="margin-top: 1.3rem;" class="position-absolute top-100 start-50 translate-middle text-color-primary fw-bold">USD</div>
                         </div>
-                        <div class="btn col-5 card text-center p-2 text-color-primary border border-primary border-2 item-card-md reil position-relative" data-bs-dismiss="modal">
-                            <span style="font-size: 4.4rem;" class="fw-bold position-absolute top-50 start-50 translate-middle">៛</span>
-                            <span style="margin-top: -1rem;" class="position-absolute top-100 start-50 translate-middle">REIL</span>
+                        <div class="btn col-5 card text-center p-2 border border-primary border-2 item-card-md reil position-relative mb-3 " data-bs-dismiss="modal">
+                            <span style="font-size: 3.4rem;" class="fw-bold position-absolute top-50 start-50 translate-middle text-color-primary ៛">៛</span>
+                            <div style="margin-top: 1.3rem;" class="position-absolute top-100 start-50 translate-middle text-color-primary fw-bold">REIL</div>
                         </div>
                     </div>
                 </div>

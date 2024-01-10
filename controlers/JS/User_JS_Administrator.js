@@ -379,6 +379,7 @@ function checkFromDB_OnUpdate(txt_id, column) {
   }
 }
 //check error on update form
+btn_update_user.disabled = true;
 function updateFormVrify() {
   var danger = document.querySelector(".input_error");
   if (danger == null) {

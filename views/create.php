@@ -34,17 +34,24 @@ include("../templates/components/modal.php") ?>
             <div class="col-12 col col-lg-6 pb-3">
 
                 <div data-bs-toggle="modal" data-bs-target="#choose_type" class="input-group input-shadow choose_type">
-                    <span class="input-group-text bg-color-white rounded-start-4"><i class="uil uil-list-ol fs-4 fw-bolder text-color-primary"></i></span>
+                    <span class="input-group-text bg-color-white rounded-start-4"><i class="uil uil-university fs-4 fw-bolder text-color-primary"></i></span>
                     <input readonly type="text" class="txt_type form-control input-number-md rounded-end-4 border-start-0 text-color-primary fw-bold" placeholder="Type" aria-label="Username" aria-describedby="basic-addon1" value="Cash">
                 </div>
             </div>
-            <div class="col-12 pb-5">
+            <div class="col-12 pb-3">
+                <div data-bs-toggle="modal" data-bs-target="#choose_type" class="input-group input-shadow choose_type">
+                    <span class="input-group-text bg-color-white rounded-start-4"><i class="uil uil-comment-alt-notes fs-4 fw-bolder text-color-primary"></i></span>
+                    <input readonly type="text" class="txt_type form-control input-number-md rounded-end-4 border-start-0 text-color-primary fw-bold" placeholder="Purpose" aria-label="Username" aria-describedby="basic-addon1" value="Normal Expend">
+                </div>
+            </div>
+            <div class="col-12 pb-4">
                 <div class="input-group input-shadow">
                     <span class="input-group-text bg-color-white rounded-start-4"><i class="uil uil-notes fs-4 fw-bolder text-color-primary"></i></span>
                     <textarea class="txt_note form-control rounded-end-4 border-start-0 input-number-lg text-color-primary fw-medium" placeholder="Note" aria-label="Username" aria-describedby="basic-addon1"></textarea>
                 </div>
             </div>
-            <div id="btn_create_tran_record" class="col-12 d-flex justify-content-center align-items-center mb-5"><button type="button" class="btn btn-primary w-100 p-3 fw-bold rounded-3 input-shadow">Create Record</button></div>
+
+            <div id="btn_create_tran_record" class="col-12 d-flex justify-content-center align-items-center mb-5 fw-bold "><button type="button" class="btn btn-primary w-100 p-3 fw-bold rounded-3 input-shadow">Create Record</button></div>
         </div>
 
     </form>

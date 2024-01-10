@@ -24,6 +24,7 @@ register();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- PWA -->
     <link rel="manifest" crossorigin="use-credentials" href="../manifest.json">
+    <link rel="icon" type="image/x-icon" href="../sources/img/favicon.svg">
     <script>
         //if browser support service worker
         if ('serviceWorker' in navigator) {

@@ -14,27 +14,38 @@ $("#income").click(function () {
 //btn choose currency handler
 $(".usd").click(function () {
   $(".symbol span").text("$");
+  $(".symbol span").addClass("fs-2");
+  $(".symbol span").removeClass("fs-1");
   $(".reil").removeClass(
-    "btn col-5 card text-center p-2 text-color-white bg-color-primary item-card-md"
+    "btn col-5 card text-center p-2 bg-color-primary item-card-md"
   );
   $(".usd").addClass(
-    "btn col-5 card text-center p-2 text-color-white bg-color-primary item-card-md"
+    "btn col-5 card text-center p-2 bg-color-primary item-card-md"
   );
   $(".reil").addClass(
-    "btn col-5 card text-center p-2 text-color-primary border border-primary border-2 item-card-md"
+    "btn col-5 card text-center p-2 border border-primary border-2 item-card-md"
   );
+  $(".reil span").removeClass("text-color-white");
+  $(".usd span").addClass("text-color-white");
+  $(".reil span").addClass("text-color-primary");
 });
 $(".reil").click(function () {
   $(".symbol span").text("៛");
+  $(".symbol span").addClass("fs-1");
+  $(".symbol span").removeClass("fs-2");
   $(".usd").removeClass(
-    "btn col-5 card text-center p-2 text-color-white bg-color-primary item-card-md"
+    "btn col-5 card text-center p-2 bg-color-primary item-card-md"
   );
   $(".reil").addClass(
-    "btn col-5 card text-center p-2 text-color-white bg-color-primary item-card-md"
+    "btn col-5 card text-center p-2 bg-color-primary item-card-md"
   );
   $(".usd").addClass(
-    "btn col-5 card text-center p-2 text-color-primary border border-primary border-2 item-card-md"
+    "btn col-5 card text-center p-2 border border-primary border-2 item-card-md"
   );
+
+  $(".usd span").removeClass("text-color-white");
+  $(".reil span").addClass("text-color-white");
+  $(".usd span").addClass("text-color-primary");
 });
 
 //select date
