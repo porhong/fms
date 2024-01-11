@@ -39,9 +39,9 @@ include("../templates/components/modal.php") ?>
                 </div>
             </div>
             <div class="col-12 pb-3">
-                <div data-bs-toggle="modal" data-bs-target="#choose_type" class="input-group input-shadow choose_type">
+                <div data-bs-toggle="modal" data-bs-target="#choose_purpose" class="input-group input-shadow choose_type">
                     <span class="input-group-text bg-color-white rounded-start-4"><i class="uil uil-comment-alt-notes fs-4 fw-bolder text-color-primary"></i></span>
-                    <input readonly type="text" class="txt_type form-control input-number-md rounded-end-4 border-start-0 text-color-primary fw-bold" placeholder="Purpose" aria-label="Username" aria-describedby="basic-addon1" value="Normal Expend">
+                    <input readonly type="text" class="txt_purpose form-control input-number-md rounded-end-4 border-start-0 text-color-primary fw-bold" placeholder="Purpose" aria-label="Username" aria-describedby="basic-addon1" value="Normal Expend">
                 </div>
             </div>
             <div class="col-12 pb-4">
@@ -62,6 +62,7 @@ include("../templates/components/modal.php") ?>
 <?php echo $modal_choose_currncy =  modal_choose_currncy('choose_currncy', 'Select Currency', 'Hello', 'Delete'); ?>
 <?php echo $modal_choose_currncy =  modal_choose_date('choose_date', 'Select Date', 'Hello', 'Confirm'); ?>
 <?php echo $modal_choose_currncy =  modal_choose_type('choose_type', 'Select Type', 'Hello', 'Delete'); ?>
+<?php echo $modal_choose_purpose =  modal_choose_purpose('choose_purpose', 'Purpose', 'Hello', 'Delete'); ?>
 <?php $content = ob_get_clean(); ?>
 <?php
 $page_title = 'Create';

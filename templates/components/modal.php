@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['Auth'])) {
+    header('Location: ../views/login.php');
+    exit();
+}
+?>
+<?php
 function modal_confirm_delete($modal_id_get, $modal_title_get, $modal_content_get, $modal_button_title_get)
 {
     ob_start();
@@ -330,7 +337,7 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
     ob_start();
 ?>
     <div class="modal fade" id="<?php echo $modal_id_get ?>">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
             <div class="modal-content">
 
                 <div class="modal-header">
@@ -345,20 +352,72 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
 
                         <?php
                         include '../sources/function/config.php';
-                        session_start();
-                        $curent_userID = $_SESSION['userID'];
+                        $curent_userID = isset($_SESSION['userID']);
                         $sql = "SELECT * FROM `tbl_tran_type` WHERE `user_id` = 79 OR `id` = $curent_userID;";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($type = $result->fetch_assoc()) {
                         ?>
-                                <div class="col-4 text-center mb-3 d-flex justify-content-center align-items-center btn_tran_type">
+                                <div class="col-12 col-lg-4 text-center mb-2 mb-lg-3 d-flex justify-content-center align-items-center btn_tran_type">
                                     <p id="<?php echo $type["name"] ?>" class="p-3 text-color-primary btn border border-primary w-100 h1 border-2 fw-bold " data-bs-dismiss="modal"><?php echo $type["name"] ?></p>
                                 </div>
                         <?php }
                         } ?>
                         <!-- input create -->
                         <div id="txt_new_type" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow d-none">
+                            <input type="text" class="form-control rounded-start-2 text-color-primary fw-medium input-number-md text-color-primary">
+                            <button id="btn_create_type" class="btn btn-primary border rounded-end-2 w-25 input-number-md fw-bold ">Create</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php
+
+    return ob_get_clean();
+}
+?>
+
+
+<?php
+function modal_choose_purpose($modal_id_get, $modal_title_get, $modal_content_get, $modal_button_title_get)
+{
+    ob_start();
+?>
+    <div class="modal fade" id="<?php echo $modal_id_get ?>">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-list-ol fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
+                    <div id="btn_new_purpose" class="text-center d-flex justify-align-content-center align-items-center">
+                        <p class="text-color-primary fw-bold btn m-0"><i class="uil uil-plus me-1 fs-4"></i>New</p>
+                    </div>
+                </div>
+
+                <div id="modal_body" class="modal-body">
+                    <div id="modal_purpose" class="row d-flex justify-align-content-between">
+
+                        <?php
+                        include '../sources/function/config.php';
+                        $curent_userID = isset($_SESSION['userID']);
+                        $sql = "SELECT * FROM `tbl_purpose` WHERE `user_id` = 79 OR `id` = $curent_userID;";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($purpose = $result->fetch_assoc()) {
+                        ?>
+                                <div class="col-12 col-lg-4 text-center mb-2 mb-lg-3s d-flex justify-content-center align-items-center btn_purpose_name">
+                                    <p id="<?php echo $purpose["name"] ?>" class="p-3 text-color-primary btn border border-primary w-100 h1 border-2 fw-bold " data-bs-dismiss="modal"><?php echo $purpose["name"] ?></p>
+                                </div>
+                        <?php }
+                        } ?>
+                        <!-- input create -->
+                        <div id="txt_new_purpose" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow d-none">
                             <input type="text" class="form-control rounded-start-2 text-color-primary fw-medium input-number-sm">
                             <button class="btn btn-primary rounded-end-2 w-25 input-number-sm">Create</button>
                         </div>
