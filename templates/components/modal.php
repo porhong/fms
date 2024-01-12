@@ -365,7 +365,7 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
                         } ?>
                         <!-- input create -->
                         <div id="txt_new_type" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow d-none">
-                            <input type="text" class="form-control rounded-start-2 text-color-primary fw-medium input-number-md text-color-primary">
+                            <input type="text" name="type_name" class="form-control rounded-start-2 text-color-primary fw-medium input-number-md text-color-primary">
                             <button id="btn_create_type" class="btn btn-primary border rounded-end-2 w-25 input-number-md fw-bold ">Create</button>
                         </div>
                     </div>

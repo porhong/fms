@@ -74,34 +74,16 @@ $("#btn_new_type").click(function () {
   $("#txt_new_type").toggleClass("d-none");
 });
 
-// get type tran
-$(document).ready(function () {
-  $(".choose_type").click(function (e) {
-    $(".data_area").empty();
-    $.ajax({
-      url: `../views/local_api/get_tran_type.php`,
-      type: "get",
-      dataType: "JSON",
-      success: function (response) {
-        var len = response.length;
-        for (var i = 0; i < len; i++) {
-          var id = response[i].id;
-          var name = response[i].name;
-          $(".data_area")
-            .append(
-              `
-            <div id="tran_type" class="col-4 text-center mb-3 d-flex justify-content-center align-items-center">
-            <p id="${name}" class="p-3 text-color-primary btn border border-primary w-100 h1" data-bs-dismiss="modal" value="${name}">${name}</p>
-            </div>
-            `
-            )
-            .click(function () {
-              var val = $(`#tran_type p`).text();
-              console.log(val);
-            });
-        }
-      },
-    });
+// insert type tran
+$(document).on("click", "#btn_create_type", function (e) {
+  e.preventDefault();
+  $.ajax({
+    method: "POST",
+    url: "../views/local_api/create_tran_type.php",
+    data: $(this).serialize(),
+    success: function (data) {
+      $("#txt_new_type").find("input").val("");
+    },
   });
 });
 
