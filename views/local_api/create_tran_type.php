@@ -1,5 +1,7 @@
 
 <?php
+$type_name     = legal_input($_POST['type_name']);
+echo $type_name;
 // convert illegal input value to ligal value formate
 function legal_input($value)
 {
@@ -20,12 +22,12 @@ function insert_data($type_name)
 
     $sql = "INSERT INTO `tbl_tran_type`(`name`, `user_id`) VALUES ('$type_name','$user_id')";
     $result = $conn->query($sql);
-    if ($execute == true) {
+    if ($result == true) {
         echo "User data was inserted successfully";
     } else {
         echo  "Error: " . $sql . "<br>" . mysqli_error($db);
     }
 }
-$type_name     = legal_input($_POST['type_name']);
+
 insert_data($type_name)
 ?>

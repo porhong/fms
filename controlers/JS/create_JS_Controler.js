@@ -75,7 +75,7 @@ $("#btn_new_type").click(function () {
 });
 
 // insert type tran
-$(document).on("click", "#btn_create_type", function (e) {
+$(document).on("submit", "#type_Form", function (e) {
   e.preventDefault();
   $.ajax({
     method: "POST",

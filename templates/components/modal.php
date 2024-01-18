@@ -352,8 +352,10 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
 
                         <?php
                         include '../sources/function/config.php';
-                        $curent_userID = isset($_SESSION['userID']);
-                        $sql = "SELECT * FROM `tbl_tran_type` WHERE `user_id` = 79 OR `id` = $curent_userID;";
+                        if (isset($_SESSION['userID'])) {
+                            $user_id = $_SESSION['userID'];
+                        }
+                        $sql = "SELECT * FROM `tbl_tran_type` WHERE `user_id` = 79 OR `user_id` = $user_id;";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($type = $result->fetch_assoc()) {
@@ -364,9 +366,12 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
                         <?php }
                         } ?>
                         <!-- input create -->
-                        <div id="txt_new_type" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow d-none">
-                            <input type="text" name="type_name" class="form-control rounded-start-2 text-color-primary fw-medium input-number-md text-color-primary">
-                            <button id="btn_create_type" class="btn btn-primary border rounded-end-2 w-25 input-number-md fw-bold ">Create</button>
+                        <div id="txt_new_type" class="d-none">
+                            <form method="post" id="type_Form" action="" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow">
+                                <input type="text" id="type_name" name="type_name" class="form-control rounded-start-2 text-color-primary fw-medium input-number-md text-color-primary">
+                                <button id="btn_create_type" type="submit" class="btn btn-primary border rounded-end-2 w-25 input-number-md fw-bold ">Create</button>
+                            </form>
+
                         </div>
                     </div>
                 </div>
