@@ -348,7 +348,7 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
                 </div>
 
                 <div id="modal_body" class="modal-body">
-                    <div id="modal_type" class="row d-flex justify-align-content-between">
+                    <div id="modal_type" class="row d-flex justify-align-content-between type_body">
 
                         <?php
                         include '../sources/function/config.php';
@@ -360,19 +360,19 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
                         if ($result->num_rows > 0) {
                             while ($type = $result->fetch_assoc()) {
                         ?>
-                                <div class="col-12 col-lg-4 text-center mb-2 mb-lg-3 d-flex justify-content-center align-items-center btn_tran_type">
-                                    <p id="<?php echo $type["name"] ?>" class="p-3 text-color-primary btn border border-primary w-100 h1 border-2 fw-bold " data-bs-dismiss="modal"><?php echo $type["name"] ?></p>
+                                <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center btn_tran_type">
+                                    <p id="<?php echo $type["name"] ?>" class="text-center mb-2 mb-lg-3 p-3 text-color-primary btn border border-primary w-100 h1 border-2 fw-bold " data-bs-dismiss="modal"><?php echo $type["name"] ?></p>
                                 </div>
                         <?php }
                         } ?>
-                        <!-- input create -->
-                        <div id="txt_new_type" class="d-none">
-                            <form method="post" id="type_Form" action="" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow">
-                                <input type="text" id="type_name" name="type_name" class="form-control rounded-start-2 text-color-primary fw-medium input-number-md text-color-primary">
-                                <button id="btn_create_type" type="submit" class="btn btn-primary border rounded-end-2 w-25 input-number-md fw-bold ">Create</button>
-                            </form>
+                    </div>
+                    <!-- input create -->
+                    <div id="txt_new_type" class="d-none">
+                        <form method="post" id="type_Form" action="" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow">
+                            <input type="text" id="type_name" name="type_name" class="form-control rounded-start-2 text-color-primary fw-medium input-number-md text-color-primary">
+                            <button id="btn_create_type" type="submit" class="btn btn-primary border rounded-end-2 w-25 input-number-md fw-bold ">Create</button>
+                        </form>
 
-                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

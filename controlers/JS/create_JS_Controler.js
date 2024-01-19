@@ -82,7 +82,13 @@ $(document).on("submit", "#type_Form", function (e) {
     url: "../views/local_api/create_tran_type.php",
     data: $(this).serialize(),
     success: function (data) {
+      var name = $("#txt_new_type").find("input").val();
       $("#txt_new_type").find("input").val("");
+      $("#txt_new_type").addClass("d-none");
+      var html = `<div class="col-12 col-lg-4 d-flex justify-content-center align-items-center btn_tran_type">
+      <p id="${name}" class="text-center mb-2 mb-lg-3 p-3 text-color-primary btn border border-primary w-100 h1 border-2 fw-bold " data-bs-dismiss="modal">${name}</p>
+  </div>`;
+      $(".type_body").append(html);
     },
   });
 });
