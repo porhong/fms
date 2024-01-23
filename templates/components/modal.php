@@ -361,7 +361,7 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
                             while ($type = $result->fetch_assoc()) {
                         ?>
                                 <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center btn_tran_type">
-                                    <p id="<?php echo $type["name"] ?>" class="text-center mb-2 mb-lg-3 p-3 text-color-primary btn border border-primary w-100 h1 border-2 fw-bold " data-bs-dismiss="modal"><?php echo $type["name"] ?></p>
+                                    <p id="<?php echo $type["name"] ?>" class="text-center mb-2 mb-lg-3 p-3 text-color-primary btn border border-primary w-100 h1 border-2 fw-bold tran_type" data-bs-dismiss="modal"><?php echo $type["name"] ?></p>
                                 </div>
                         <?php }
                         } ?>

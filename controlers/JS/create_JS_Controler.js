@@ -98,7 +98,8 @@ $(`#Cash`).addClass(
   "p-3 text-color-white bg-color-primary btn w-100 h1 fw-bold"
 );
 var previous_button_tran_type = "Cash";
-$(".btn_tran_type").click(function (e) {
+
+$("#modal_type").on("click", ".btn_tran_type", function (e) {
   var idClicked = e.target.id;
   $(".txt_type").val(idClicked);
   var val_tran_type = $(".txt_type").val();
@@ -118,6 +119,57 @@ $(".btn_tran_type").click(function (e) {
     );
   }
 });
+
+//Edite and Delete buttons for tran_type handlers
+//----------------------------------------------------------------
+// This timeout, started on mousedown, triggers the beginning of a hold
+var holdStarter = null;
+
+// This is how many milliseconds to wait before recognizing a hold
+var holdDelay = 500;
+
+// This flag indicates the user is currently holding the mouse down
+var holdActive = false;
+
+// MouseDown
+$("#modal_type").on("mousedown", ".btn_tran_type", function onMouseDown() {
+  holdStarter = setTimeout(function () {
+    holdStarter = null;
+    holdActive = true;
+    // begin hold-only operation here, if desired
+    $(".modal-header #btn_new_type").addClass("d-none");
+    $(".tran_type").attr("data-bs-dismiss", "none");
+  }, holdDelay);
+});
+
+// MouseUp
+
+$("#modal_type").on("mouseup", ".btn_tran_type", function onMouseUp() {
+  // If the mouse is released immediately (i.e., a click), before the
+  //  holdStarter runs, then cancel the holdStarter and do the click
+  if (holdStarter) {
+    clearTimeout(holdStarter);
+    // run click-only operation here
+  }
+  // Otherwise, if the mouse was being held, end the hold
+  else if (holdActive) {
+    holdActive = false;
+    // end hold-only operation here, if desired
+    $(".modal-header #btn_new_type").removeClass("d-none");
+    setTimeout(function () {
+      $(".tran_type").attr("data-bs-dismiss", "modal");
+    }, 500);
+  }
+});
+
+// OnClick
+// not using onclick at all - onmousedown and onmouseup take care of everything
+
+$("#modal_type").on("mouseout", ".btn_tran_type", function () {
+  $(".modal-header #btn_new_type").removeClass("d-none");
+});
+
+//--------------------------------------------------------------------------
 
 //Amount input validation
 $("#btn_create_tran_record").click(function () {
