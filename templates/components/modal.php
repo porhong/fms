@@ -341,13 +341,24 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-list-ol fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
-                    <div id="btn_new_type" class="text-center d-flex justify-align-content-center align-items-center">
-                        <p class="text-color-primary fw-bold btn m-0"><i class="uil uil-plus me-1 fs-4"></i>New</p>
+                    <h5 class="modal-title d-flex align-items-center justify-content-center text-color-primary fw-bold"><i class="uil uil-university fs-2 pe-2"></i><span><?php echo $modal_title_get ?></span></h5>
+                    <div class="d-flex align-items-md-end ">
+
+                        <div id="btn_new_type" class="text-center d-flex justify-align-content-center align-items-center border border-none border-2 border-primary rounded-3 me-3 btn">
+                            <i class="uil uil-plus text-color-primary fs-4 pe-1 d-none d-lg-inline"></i>
+                            <p class="text-color-primary fw-bold m-0 me-1 ">New</p>
+                        </div>
+
+                        <div id="btn_edit_type" class="text-center d-flex justify-align-content-center align-items-center border border-none border-2 border-primary rounded-3 me-3 btn">
+                            <i class="uil uil-pen fs-4 d-flex align-items-center text-color-primary pe-1 d-none d-lg-inline"></i>
+                            <p class="text-color-primary fw-bold m-0  me-1 ">Edit</p>
+                        </div>
+
+
                     </div>
                 </div>
 
-                <div id="modal_body" class="modal-body">
+                <div id="modal_body" class="modal-body ">
                     <div id="modal_type" class="row d-flex justify-align-content-between type_body">
 
                         <?php
@@ -355,7 +366,7 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
                         if (isset($_SESSION['userID'])) {
                             $user_id = $_SESSION['userID'];
                         }
-                        $sql = "SELECT * FROM `tbl_tran_type` WHERE `user_id` = 79 OR `user_id` = $user_id;";
+                        $sql = "SELECT * FROM `tbl_tran_type` WHERE `user_id` = 79 OR `user_id` = $user_id ORDER BY `id` asc;";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($type = $result->fetch_assoc()) {
@@ -366,6 +377,44 @@ function modal_choose_type($modal_id_get, $modal_title_get, $modal_content_get, 
                         <?php }
                         } ?>
                     </div>
+                    <!-- list edit -->
+                    <div class="container">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-color-primary  " scope="col-3">#</th>
+                                    <th class="text-color-primary  me-5 " scope="col-6">Name</th>
+                                    <th class="text-center text-color-primary " scope="col-3">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php include '../sources/function/config.php';
+                                if (isset($_SESSION['userID'])) {
+                                    $user_id = $_SESSION['userID'];
+                                }
+                                $sql = "SELECT * FROM `tbl_tran_type` WHERE `user_id` = 79 OR `user_id` = $user_id ORDER BY `id` asc;";
+                                $result = $conn->query($sql);
+                                $num_rows = 1;
+                                if ($result->num_rows > 0) {
+                                    while ($type = $result->fetch_assoc()) {
+                                ?>
+                                        <tr>
+                                            <th class="text-color-primary  " scope="row"><?php echo $num_rows++ ?></th>
+                                            <td class="text-color-primary  me-5 "><?php echo $type["name"] ?></td>
+                                            <td class="text-center">
+                                                <div class="btn text-color-primary fs-4 "><i class="uil uil-edit"></i></div>
+                                                <div class="btn text-color-danger fs-4 "><i class="uil uil-trash-alt"></i></div>
+                                            </td>
+                                        </tr>
+                                <?php }
+                                } ?>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
                     <!-- input create -->
                     <div id="txt_new_type" class="d-none">
                         <form method="post" id="type_Form" action="" class="input-group col-12 mb-3 text-center d-flex justify-align-content-center align-items-center input-shadow">

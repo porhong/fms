@@ -120,53 +120,9 @@ $("#modal_type").on("click", ".btn_tran_type", function (e) {
   }
 });
 
-//Edite and Delete buttons for tran_type handlers
-//----------------------------------------------------------------
-// This timeout, started on mousedown, triggers the beginning of a hold
-var holdStarter = null;
-
-// This is how many milliseconds to wait before recognizing a hold
-var holdDelay = 500;
-
-// This flag indicates the user is currently holding the mouse down
-var holdActive = false;
-
-// MouseDown
-$("#modal_type").on("mousedown", ".btn_tran_type", function onMouseDown() {
-  holdStarter = setTimeout(function () {
-    holdStarter = null;
-    holdActive = true;
-    // begin hold-only operation here, if desired
-    $(".modal-header #btn_new_type").addClass("d-none");
-    $(".tran_type").attr("data-bs-dismiss", "none");
-  }, holdDelay);
-});
-
-// MouseUp
-
-$("#modal_type").on("mouseup", ".btn_tran_type", function onMouseUp() {
-  // If the mouse is released immediately (i.e., a click), before the
-  //  holdStarter runs, then cancel the holdStarter and do the click
-  if (holdStarter) {
-    clearTimeout(holdStarter);
-    // run click-only operation here
-  }
-  // Otherwise, if the mouse was being held, end the hold
-  else if (holdActive) {
-    holdActive = false;
-    // end hold-only operation here, if desired
-    $(".modal-header #btn_new_type").removeClass("d-none");
-    setTimeout(function () {
-      $(".tran_type").attr("data-bs-dismiss", "modal");
-    }, 500);
-  }
-});
-
-// OnClick
-// not using onclick at all - onmousedown and onmouseup take care of everything
-
-$("#modal_type").on("mouseout", ".btn_tran_type", function () {
-  $(".modal-header #btn_new_type").removeClass("d-none");
+//btn edite
+$(".modal-header").on("click", "#btn_edit_type", function (e) {
+  $(".type_body").addClass("d-none");
 });
 
 //--------------------------------------------------------------------------

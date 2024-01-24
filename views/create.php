@@ -61,7 +61,7 @@ include("../templates/components/modal.php") ?>
 <script src="../sources/calendar-17/js/main.js"></script>
 <?php echo $modal_choose_currncy =  modal_choose_currncy('choose_currncy', 'Select Currency', 'Hello', 'Delete'); ?>
 <?php echo $modal_choose_currncy =  modal_choose_date('choose_date', 'Select Date', 'Hello', 'Confirm'); ?>
-<?php echo $modal_choose_currncy =  modal_choose_type('choose_type', 'Select Type', 'Hello', 'Delete'); ?>
+<?php echo $modal_choose_currncy =  modal_choose_type('choose_type', 'Transaction', 'Hello', 'Delete'); ?>
 <?php echo $modal_choose_purpose =  modal_choose_purpose('choose_purpose', 'Purpose', 'Hello', 'Delete'); ?>
 <?php $content = ob_get_clean(); ?>
 <?php
