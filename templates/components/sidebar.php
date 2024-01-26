@@ -33,7 +33,7 @@
         <div class="row">
             <a id="nav_mobile_back" class="navbar-brand ps-1 position-absolute top-50 start-0 translate-middle-y d-flex d-none" href="#">
                 <i class="uil uil-arrow-left lg-icon-size ms-1 text-color-primary"></i>
-                <h2 class=" card-title d-flex align-items-center text-color-primary ms-1"><span class="fw-bold fs-4"><?php echo $page_title ?></span></h2>
+                <h2 class=" card-title d-flex align-items-center text-color-primary ms-1"><span id="page_title" class="fw-bold fs-4"><?php echo $page_title ?></span></h2>
             </a>
 
         </div>

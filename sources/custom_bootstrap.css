@@ -15,17 +15,17 @@
 .btn.btn-primary {
   background-color: var(--primary) !important;
   padding: 0.8rem !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 .btn.btn-secondary {
   background-color: var(--danger) !important;
   border: none !important;
   padding: 0.5rem !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 .btn.btn-danger {
   padding: 0.8rem !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   background-color: var(--danger) !important;
 }
 .form-label {

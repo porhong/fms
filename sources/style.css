@@ -182,6 +182,13 @@
   border-color: var(--light_brown) !important;
   border-left: none !important;
 }
+.txt_note::placeholder {
+  font-weight: 600 !important;
+}
+.txt_purpose:focus {
+  border-color: var(--light_brown) !important;
+  border-left: none !important;
+}
 .buttom-margin {
   margin-bottom: 6rem !important;
 }

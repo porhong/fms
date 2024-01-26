@@ -20,6 +20,9 @@ body {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+.input-group-text {
+  border-right: none !important;
+}
 .link_color {
   color: var(--primary) !important;
   text-decoration: none !important;

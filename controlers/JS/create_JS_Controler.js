@@ -120,9 +120,21 @@ $("#modal_type").on("click", ".btn_tran_type", function (e) {
   }
 });
 
-//btn edite
+//btn edit
 $(".modal-header").on("click", "#btn_edit_type", function (e) {
-  $(".type_body").addClass("d-none");
+  $(".container #form-create").addClass("d-none");
+  $(".container #edit-tran-type").removeClass("d-none").fadeIn();
+  $("#page_title").text("Edit Transaction");
+  $(`<a id="btn_back" d-flex" href="#">
+  <i class="uil uil-arrow-left lg-icon-size ms-1 text-color-primary"></i>
+</a>`).insertBefore("h2.card-title");
+});
+
+$(".navbar-brand").on("click", "#btn_back", function (e) {
+  $(".container #form-create").removeClass("d-none");
+  $(".container #edit-tran-type").addClass("d-none");
+  $("#page_title").text("Transaction");
+  $("#btn_back").remove("#btn_back");
 });
 
 //--------------------------------------------------------------------------

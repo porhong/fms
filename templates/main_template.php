@@ -57,7 +57,7 @@ if (!isset($_SESSION['Auth'])) {
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
     <!-- Jqury-UI -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
 
 
 

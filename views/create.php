@@ -8,7 +8,7 @@ include("../templates/components/modal.php") ?>
 <link rel="stylesheet" href="../sources/calendar-17/css/style.css">
 <?php ob_start(); ?>
 <div class="container">
-    <form action="">
+    <form id="form-create" action="">
 
         <div class="row border border-2 border-primary rounded rounded-4 fw-bold">
             <div id="expend" class="col-6 d-flex justify-content-center pt-2 pb-2 "><span class="expend bg-color-primary text-color-white w-100 text-center p-2 rounded-3">Expend</span></div>
@@ -47,7 +47,7 @@ include("../templates/components/modal.php") ?>
             <div class="col-12 pb-4">
                 <div class="input-group input-shadow">
                     <span class="input-group-text bg-color-white rounded-start-4"><i class="uil uil-notes fs-4 fw-bolder text-color-primary"></i></span>
-                    <textarea class="txt_note form-control rounded-end-4 border-start-0 input-number-lg text-color-primary fw-medium" placeholder="Note" aria-label="Username" aria-describedby="basic-addon1"></textarea>
+                    <textarea class="txt_note form-control rounded-end-4 border-start-0 input-number-lg text-color-primary fw-bold" placeholder="Note" aria-label="Username" aria-describedby="basic-addon1"></textarea>
                 </div>
             </div>
 
@@ -55,6 +55,50 @@ include("../templates/components/modal.php") ?>
         </div>
 
     </form>
+
+
+    <!-- list edit -->
+    <div id="edit-tran-type" class="container-fluid  d-none">
+        <div class="row">
+
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-color-primary  col-1" scope="col">#</th>
+                    <th class="text-color-primary  col-6 col-lg-8" scope="col">Name</th>
+                    <th class=" text-center text-color-primary col-5 col-lg-3" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php include '../sources/function/config.php';
+                if (isset($_SESSION['userID'])) {
+                    $user_id = $_SESSION['userID'];
+                }
+                $sql = "SELECT * FROM `tbl_tran_type` WHERE `user_id` = 79 OR `user_id` = $user_id ORDER BY `id` asc;";
+                $result = $conn->query($sql);
+                $num_rows = 1;
+                if ($result->num_rows > 0) {
+                    while ($type = $result->fetch_assoc()) {
+                ?>
+                        <tr>
+                            <th class="text-color-primary col-1" scope="row"><?php echo $num_rows++ ?></th>
+                            <td class="text-color-primary col-6 col-lg-8"><?php echo $type["name"] ?></td>
+                            <td class=" text-center col-5 col-lg-3">
+                                <div class="btn text-color-primary fs-4 "><i class="uil uil-edit"></i></div>
+                                <div class="btn text-color-danger fs-4"><i class="uil uil-trash-alt"></i></div>
+                            </td>
+                        </tr>
+                <?php }
+                } ?>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
 </div>
 <!-- Date picker -->
 <script src="../sources/calendar-17/js/rome.js"></script>
